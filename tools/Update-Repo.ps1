@@ -145,6 +145,21 @@ function Publish-Release {
                 }
             }
 
+            # Re-uploading resets that asset's download count, so skip when the exact
+            # same bytes are already published.
+            if ($releaseExists) {
+                $localSize = (Get-Item $AssetPath).Length
+                $assetJson = & gh api "repos/$Slug/releases/tags/$Tag" 2>&1
+                if ($LASTEXITCODE -eq 0) {
+                    $existingAsset = ($assetJson | ConvertFrom-Json).assets |
+                        Where-Object { $_.name -eq $AssetName } | Select-Object -First 1
+                    if ($existingAsset -and $existingAsset.size -eq $localSize) {
+                        Write-Host "  Asset unchanged - keeping existing upload (preserves count)" -ForegroundColor DarkGray
+                        return $downloadUrl
+                    }
+                }
+            }
+
             # The asset must be UPLOADED under the name <InternalName>.zip: the download
             # URL embeds the filename, and the counter workflow identifies plugins by it.
             # "gh release upload file#label" only sets a display label and would leave the
@@ -233,12 +248,15 @@ if (Test-Path $repoJsonPath) {
     }
 }
 
+# Download URLs always point at release assets - that is the only place packages
+# are hosted. Resolve the slug unconditionally so a run WITHOUT -Publish cannot
+# rewrite repo.json with links to files that do not exist.
+$repoSlug = Get-RepoSlug -RepoUrl $config.repoUrl
+
 # Publishing prerequisites
 $script:GhAvailable = $false
 $script:GitHubToken = $env:GITHUB_TOKEN
-$repoSlug = $null
 if ($Publish) {
-    $repoSlug = Get-RepoSlug -RepoUrl $config.repoUrl
     if (Get-Command gh -ErrorAction SilentlyContinue) {
         $script:GhAvailable = $true
         Write-Host "Publishing to $repoSlug via GitHub CLI" -ForegroundColor DarkGray
@@ -327,12 +345,14 @@ foreach ($p in $config.plugins) {
         Write-Warning "  Fork of $($p.fork.upstream) has no licence file declared - verify redistribution terms."
     }
 
-    # Download link: a GitHub Release asset when publishing (so downloads are
-    # counted), otherwise the raw file in this repo.
-    $download = "$($config.baseUrl)/plugins/$($p.internalName)/latest.zip"
+    # Packages live ONLY as release assets, so the download link is always the
+    # release URL - derived from the tag and asset name, never from whether this
+    # particular run uploaded anything.
+    $tag       = "$($p.internalName)-v$($manifest.AssemblyVersion)"
+    $assetName = "$($p.internalName).zip"
+    $download  = "https://github.com/$repoSlug/releases/download/$tag/$assetName"
+
     if ($Publish) {
-        $tag       = "$($p.internalName)-v$($manifest.AssemblyVersion)"
-        $assetName = "$($p.internalName).zip"
         try {
             $download = Publish-Release -Slug $repoSlug -Tag $tag -AssetPath $zip.FullName `
                                         -AssetName $assetName -Title "$($manifest.Name) $($manifest.AssemblyVersion)"
@@ -343,6 +363,9 @@ foreach ($p in $config.plugins) {
             $failed += $p.internalName
             continue
         }
+    }
+    else {
+        Write-Host "  Link: $tag/$assetName (run with -Publish to upload)" -ForegroundColor DarkGray
     }
 
     # Preserve the count the workflow last wrote; it refreshes from the API on schedule.
