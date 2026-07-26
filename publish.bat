@@ -13,10 +13,11 @@ REM ===========================================================================
 setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 
-REM Detect double-click (no console args and launched from explorer) so the
-REM window stays open at the end instead of vanishing.
-set "PAUSE_AT_END="
-echo %CMDCMDLINE% | find /i "%~nx0" >nul 2>&1 && set "PAUSE_AT_END=1"
+REM Keep the window open at the end so a double-click doesn't flash and vanish.
+REM Set PUBLISH_NOPAUSE=1 when calling this from another script or CI, otherwise
+REM it will sit waiting on a keypress forever.
+set "PAUSE_AT_END=1"
+if defined PUBLISH_NOPAUSE set "PAUSE_AT_END="
 
 echo ============================================
 echo   DalamudPlugins publisher
@@ -34,7 +35,10 @@ if errorlevel 1 (
     echo   ERROR: not a git repository.
     goto :fail
 )
-git pull --rebase origin main
+REM --autostash: the script rewrites repo.json (LastUpdate) on every run, so the
+REM working tree is almost always dirty by the time this runs again. Without it
+REM the rebase aborts with "cannot pull with rebase: You have unstaged changes".
+git pull --rebase --autostash origin main
 if errorlevel 1 (
     echo.
     echo   ERROR: pull/rebase failed. Resolve conflicts, then run again.
