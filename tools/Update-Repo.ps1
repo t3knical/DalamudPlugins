@@ -307,15 +307,6 @@ foreach ($p in $config.plugins) {
     }
     Write-Host "  Package: $($zip.FullName)" -ForegroundColor DarkGray
 
-    # Safety gate - refuse to publish anything questionable
-    $problems = Test-ZipSafe -ZipPath $zip.FullName -Name $p.internalName
-    if ($problems.Count -gt 0) {
-        Write-Warning "  BLOCKED - not published:"
-        foreach ($problem in $problems) { Write-Warning "    - $problem" }
-        $failed += $p.internalName
-        continue
-    }
-
     $manifestSrc = Join-Path $zip.Directory.FullName "$($p.internalName).json"
     if (-not (Test-Path $manifestSrc)) {
         Write-Warning "  Manifest not found next to zip: $manifestSrc"
@@ -324,11 +315,40 @@ foreach ($p in $config.plugins) {
     }
     $manifest = Get-Content $manifestSrc -Raw | ConvertFrom-Json
 
-    # Publish artifacts
+    # Stage the package here first, then scan and upload THAT exact file, so what
+    # gets checked is what gets published.
     $outDir = Join-Path $pluginsDir $p.internalName
     if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir | Out-Null }
-    Copy-Item $zip.FullName (Join-Path $outDir 'latest.zip') -Force
+    $stagedZip = Join-Path $outDir 'latest.zip'
+    Copy-Item $zip.FullName $stagedZip -Force
     Copy-Item $manifestSrc  (Join-Path $outDir "$($p.internalName).json") -Force
+
+    # IconUrl only feeds the installer's browse list. Once a plugin is INSTALLED,
+    # Dalamud looks for an icon bundled inside the package at images/icon.png -
+    # without it the icon vanishes after install. DalamudPackager does not carry
+    # subfolders into the zip, so inject it here for every plugin uniformly.
+    $iconSrc = Join-Path $outDir 'icon.png'
+    if (Test-Path $iconSrc) {
+        $archive = [System.IO.Compression.ZipFile]::Open($stagedZip, 'Update')
+        try {
+            $hasIcon = $archive.Entries | Where-Object { $_.FullName -ieq 'images/icon.png' }
+            if (-not $hasIcon) {
+                [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                    $archive, $iconSrc, 'images/icon.png') | Out-Null
+                Write-Host "  Bundled images/icon.png into the package" -ForegroundColor DarkGray
+            }
+        }
+        finally { $archive.Dispose() }
+    }
+
+    # Safety gate - refuse to publish anything questionable
+    $problems = Test-ZipSafe -ZipPath $stagedZip -Name $p.internalName
+    if ($problems.Count -gt 0) {
+        Write-Warning "  BLOCKED - not published:"
+        foreach ($problem in $problems) { Write-Warning "    - $problem" }
+        $failed += $p.internalName
+        continue
+    }
 
     # Carry the upstream licence for forks so redistribution stays compliant
     if ($p.license) {
@@ -354,7 +374,7 @@ foreach ($p in $config.plugins) {
 
     if ($Publish) {
         try {
-            $download = Publish-Release -Slug $repoSlug -Tag $tag -AssetPath $zip.FullName `
+            $download = Publish-Release -Slug $repoSlug -Tag $tag -AssetPath $stagedZip `
                                         -AssetName $assetName -Title "$($manifest.Name) $($manifest.AssemblyVersion)"
             Write-Host "  Released: $tag" -ForegroundColor DarkGray
         }
