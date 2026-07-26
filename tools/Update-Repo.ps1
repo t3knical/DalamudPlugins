@@ -126,13 +126,44 @@ function Publish-Release {
     $downloadUrl = "https://github.com/$Slug/releases/download/$Tag/$AssetName"
 
     if ($script:GhAvailable) {
-        $existing = & gh release view $Tag --repo $Slug 2>$null
-        if ($LASTEXITCODE -ne 0) {
-            & gh release create $Tag --repo $Slug --title $Title --notes "Automated release of $Title." | Out-Null
-            if ($LASTEXITCODE -ne 0) { throw "gh release create failed for $Tag" }
+        # NOTE: $ErrorActionPreference = 'Stop' makes PowerShell 5.1 treat a native
+        # command's stderr as a terminating error. "gh release view" writes to stderr
+        # whenever the release does not exist yet - the normal first-publish case - so
+        # native calls run with 'Continue' and are judged on $LASTEXITCODE instead.
+        $prevEap = $ErrorActionPreference
+        $ErrorActionPreference = 'Continue'
+        try {
+            $viewOutput = & gh release view $Tag --repo $Slug 2>&1
+            $releaseExists = ($LASTEXITCODE -eq 0)
+
+            if (-not $releaseExists) {
+                Write-Host "  Creating release $Tag" -ForegroundColor DarkGray
+                $createOutput = & gh release create $Tag --repo $Slug --title $Title `
+                    --notes "Automated release of $Title." 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                    throw "gh release create failed for ${Tag}: $($createOutput -join ' ')"
+                }
+            }
+
+            # The asset must be UPLOADED under the name <InternalName>.zip: the download
+            # URL embeds the filename, and the counter workflow identifies plugins by it.
+            # "gh release upload file#label" only sets a display label and would leave the
+            # asset named latest.zip, so stage a correctly named copy instead.
+            $staged = Join-Path ([System.IO.Path]::GetTempPath()) $AssetName
+            Copy-Item $AssetPath $staged -Force
+            try {
+                $uploadOutput = & gh release upload $Tag $staged --repo $Slug --clobber 2>&1
+                if ($LASTEXITCODE -ne 0) {
+                    throw "gh release upload failed for ${Tag}: $($uploadOutput -join ' ')"
+                }
+            }
+            finally {
+                Remove-Item $staged -Force -ErrorAction SilentlyContinue
+            }
         }
-        & gh release upload $Tag "$AssetPath#$AssetName" --repo $Slug --clobber | Out-Null
-        if ($LASTEXITCODE -ne 0) { throw "gh release upload failed for $Tag" }
+        finally {
+            $ErrorActionPreference = $prevEap
+        }
         return $downloadUrl
     }
 

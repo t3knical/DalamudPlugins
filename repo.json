@@ -23,10 +23,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1785081445,
-        "DownloadLinkInstall":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/latest.zip",
-        "DownloadLinkUpdate":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/latest.zip",
-        "DownloadLinkTesting":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/latest.zip"
+        "LastUpdate":  1785082713,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.7/HunterV2.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.7/HunterV2.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.7/HunterV2.zip"
     },
     {
         "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
@@ -57,10 +57,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1785081445,
-        "DownloadLinkInstall":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PingPlugin/latest.zip",
-        "DownloadLinkUpdate":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PingPlugin/latest.zip",
-        "DownloadLinkTesting":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PingPlugin/latest.zip"
+        "LastUpdate":  1785082715,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/PingPlugin-v2.10.3.0/PingPlugin.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PingPlugin-v2.10.3.0/PingPlugin.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PingPlugin-v2.10.3.0/PingPlugin.zip"
     },
     {
         "Author":  "T3chnicalD3ath Inc.",
@@ -85,10 +85,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1785081445,
-        "DownloadLinkInstall":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/latest.zip",
-        "DownloadLinkUpdate":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/latest.zip",
-        "DownloadLinkTesting":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/latest.zip"
+        "LastUpdate":  1785082716,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.2/PartyMonitor.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.2/PartyMonitor.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.2/PartyMonitor.zip"
     },
     {
         "Author":  "T3chnicalD3ath Inc.",
@@ -116,10 +116,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1785081445,
-        "DownloadLinkInstall":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyRecruitmentHelper/latest.zip",
-        "DownloadLinkUpdate":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyRecruitmentHelper/latest.zip",
-        "DownloadLinkTesting":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyRecruitmentHelper/latest.zip"
+        "LastUpdate":  1785082717,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyRecruitmentHelper-v1.0.0.0/PartyRecruitmentHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyRecruitmentHelper-v1.0.0.0/PartyRecruitmentHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyRecruitmentHelper-v1.0.0.0/PartyRecruitmentHelper.zip"
     },
     {
         "Author":  "pohky (fork maintained by T3chnicalD3ath Inc.)",
@@ -146,9 +146,9 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1785081445,
-        "DownloadLinkInstall":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/TeleporterPlugin/latest.zip",
-        "DownloadLinkUpdate":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/TeleporterPlugin/latest.zip",
-        "DownloadLinkTesting":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/TeleporterPlugin/latest.zip"
+        "LastUpdate":  1785082718,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/TeleporterPlugin-v2.0.2.9/TeleporterPlugin.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/TeleporterPlugin-v2.0.2.9/TeleporterPlugin.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/TeleporterPlugin-v2.0.2.9/TeleporterPlugin.zip"
     }
 ]
