@@ -20,15 +20,26 @@
 .PARAMETER Plugin
     Only process the named plugin (InternalName). Defaults to all.
 
+.PARAMETER Publish
+    Upload each package to a GitHub Release (tag: <InternalName>-v<version>).
+    Release assets are what make download counts possible - GitHub reports a
+    download_count per asset, which the update-download-counts workflow sums
+    back into repo.json. Raw files in the repo report nothing.
+
+    Requires either the GitHub CLI (gh) on PATH, or $env:GITHUB_TOKEN set to a
+    token with 'contents: write' on the repository.
+
 .EXAMPLE
-    .\tools\Update-Repo.ps1
-    .\tools\Update-Repo.ps1 -Plugin Hunter
-    .\tools\Update-Repo.ps1 -NoBuild
+    .\tools\Update-Repo.ps1                    # build + package + write repo.json
+    .\tools\Update-Repo.ps1 -Publish           # ...and upload releases
+    .\tools\Update-Repo.ps1 -Plugin HunterV2 -Publish
+    .\tools\Update-Repo.ps1 -NoBuild -Publish
 #>
 [CmdletBinding()]
 param(
     [switch]$NoBuild,
-    [string]$Plugin
+    [string]$Plugin,
+    [switch]$Publish
 )
 
 $ErrorActionPreference = 'Stop'
@@ -87,6 +98,78 @@ function Test-ZipSafe {
     return $problems
 }
 
+function Get-RepoSlug {
+    param([string]$RepoUrl)
+    # https://github.com/owner/name -> owner/name
+    if ($RepoUrl -match 'github\.com/([^/]+)/([^/\s]+?)(\.git)?/?$') {
+        return "$($Matches[1])/$($Matches[2])"
+    }
+    throw "Could not parse owner/repo from repoUrl '$RepoUrl'"
+}
+
+function Publish-Release {
+    <#
+        Creates (or reuses) the release for this plugin version and uploads the
+        zip as <InternalName>.zip. Returns the browser download URL.
+
+        Note: re-uploading over an existing asset resets that asset's download
+        count, so bump the version rather than republishing the same one.
+    #>
+    param(
+        [string]$Slug,
+        [string]$Tag,
+        [string]$AssetPath,
+        [string]$AssetName,
+        [string]$Title
+    )
+
+    $downloadUrl = "https://github.com/$Slug/releases/download/$Tag/$AssetName"
+
+    if ($script:GhAvailable) {
+        $existing = & gh release view $Tag --repo $Slug 2>$null
+        if ($LASTEXITCODE -ne 0) {
+            & gh release create $Tag --repo $Slug --title $Title --notes "Automated release of $Title." | Out-Null
+            if ($LASTEXITCODE -ne 0) { throw "gh release create failed for $Tag" }
+        }
+        & gh release upload $Tag "$AssetPath#$AssetName" --repo $Slug --clobber | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw "gh release upload failed for $Tag" }
+        return $downloadUrl
+    }
+
+    # REST fallback - no gh required, just a token
+    $headers = @{
+        Authorization          = "Bearer $($script:GitHubToken)"
+        Accept                 = 'application/vnd.github+json'
+        'X-GitHub-Api-Version' = '2022-11-28'
+        'User-Agent'           = 'DalamudPlugins-Update-Repo'
+    }
+
+    $release = $null
+    try {
+        $release = Invoke-RestMethod -Method Get -Headers $headers `
+            -Uri "https://api.github.com/repos/$Slug/releases/tags/$Tag"
+    }
+    catch {
+        $body = @{ tag_name = $Tag; name = $Title; body = "Automated release of $Title." } | ConvertTo-Json
+        $release = Invoke-RestMethod -Method Post -Headers $headers -ContentType 'application/json' `
+            -Uri "https://api.github.com/repos/$Slug/releases" -Body $body
+    }
+
+    # Replace an existing asset of the same name (resets its count - bump versions instead)
+    foreach ($asset in @($release.assets)) {
+        if ($asset.name -eq $AssetName) {
+            Invoke-RestMethod -Method Delete -Headers $headers `
+                -Uri "https://api.github.com/repos/$Slug/releases/assets/$($asset.id)" | Out-Null
+        }
+    }
+
+    $uploadUrl = ($release.upload_url -replace '\{\?name,label\}', '') + "?name=$AssetName"
+    Invoke-RestMethod -Method Post -Headers $headers -ContentType 'application/zip' `
+        -Uri $uploadUrl -InFile $AssetPath | Out-Null
+
+    return $downloadUrl
+}
+
 function Find-PackagedZip {
     param([string]$ProjectDir, [string]$InternalName)
 
@@ -105,6 +188,41 @@ function Find-PackagedZip {
 
 $entries = @()
 $failed  = @()
+
+# Carry existing download counts forward so a publish never zeroes them between
+# runs of the update-download-counts workflow.
+$repoJsonPath   = Join-Path $repoRoot 'repo.json'
+$existingCounts = @{}
+if (Test-Path $repoJsonPath) {
+    $priorText = [System.IO.File]::ReadAllText($repoJsonPath)
+    if ($priorText.Trim()) {
+        foreach ($prior in (ConvertFrom-Json $priorText)) {
+            if ($prior.InternalName) { $existingCounts[$prior.InternalName] = $prior.DownloadCount }
+        }
+    }
+}
+
+# Publishing prerequisites
+$script:GhAvailable = $false
+$script:GitHubToken = $env:GITHUB_TOKEN
+$repoSlug = $null
+if ($Publish) {
+    $repoSlug = Get-RepoSlug -RepoUrl $config.repoUrl
+    if (Get-Command gh -ErrorAction SilentlyContinue) {
+        $script:GhAvailable = $true
+        Write-Host "Publishing to $repoSlug via GitHub CLI" -ForegroundColor DarkGray
+    }
+    elseif ($script:GitHubToken) {
+        Write-Host "Publishing to $repoSlug via REST API (GITHUB_TOKEN)" -ForegroundColor DarkGray
+    }
+    else {
+        throw @"
+-Publish needs GitHub credentials. Either:
+  1. Install the GitHub CLI and sign in:   winget install GitHub.cli   then   gh auth login
+  2. Or set a token with 'contents: write': `$env:GITHUB_TOKEN = '<token>'
+"@
+    }
+}
 
 foreach ($p in $config.plugins) {
     if ($Plugin -and $p.internalName -ne $Plugin) { continue }
@@ -178,11 +296,33 @@ foreach ($p in $config.plugins) {
         Write-Warning "  Fork of $($p.fork.upstream) has no licence file declared - verify redistribution terms."
     }
 
-    # repo.json entry
+    # Download link: a GitHub Release asset when publishing (so downloads are
+    # counted), otherwise the raw file in this repo.
     $download = "$($config.baseUrl)/plugins/$($p.internalName)/latest.zip"
-    $manifest | Add-Member -NotePropertyName 'IsHide'              -NotePropertyValue $false   -Force
-    $manifest | Add-Member -NotePropertyName 'IsTestingExclusive'  -NotePropertyValue $false   -Force
-    $manifest | Add-Member -NotePropertyName 'DownloadCount'       -NotePropertyValue 0        -Force
+    if ($Publish) {
+        $tag       = "$($p.internalName)-v$($manifest.AssemblyVersion)"
+        $assetName = "$($p.internalName).zip"
+        try {
+            $download = Publish-Release -Slug $repoSlug -Tag $tag -AssetPath $zip.FullName `
+                                        -AssetName $assetName -Title "$($manifest.Name) $($manifest.AssemblyVersion)"
+            Write-Host "  Released: $tag" -ForegroundColor DarkGray
+        }
+        catch {
+            Write-Warning "  Release upload FAILED: $($_.Exception.Message)"
+            $failed += $p.internalName
+            continue
+        }
+    }
+
+    # Preserve the count the workflow last wrote; it refreshes from the API on schedule.
+    $priorCount = 0
+    if ($existingCounts.ContainsKey($p.internalName) -and $existingCounts[$p.internalName]) {
+        $priorCount = $existingCounts[$p.internalName]
+    }
+
+    $manifest | Add-Member -NotePropertyName 'IsHide'              -NotePropertyValue $false      -Force
+    $manifest | Add-Member -NotePropertyName 'IsTestingExclusive'  -NotePropertyValue $false      -Force
+    $manifest | Add-Member -NotePropertyName 'DownloadCount'       -NotePropertyValue $priorCount -Force
     $manifest | Add-Member -NotePropertyName 'LastUpdate'          -NotePropertyValue ([DateTimeOffset]::UtcNow.ToUnixTimeSeconds()) -Force
     $manifest | Add-Member -NotePropertyName 'DownloadLinkInstall' -NotePropertyValue $download -Force
     $manifest | Add-Member -NotePropertyName 'DownloadLinkUpdate'  -NotePropertyValue $download -Force
@@ -197,7 +337,6 @@ foreach ($p in $config.plugins) {
 }
 
 # Preserve entries for plugins we skipped this run
-$repoJsonPath = Join-Path $repoRoot 'repo.json'
 if ($Plugin -and (Test-Path $repoJsonPath)) {
     $existing = Get-Content $repoJsonPath -Raw | ConvertFrom-Json
     $updatedNames = $entries | ForEach-Object { $_.InternalName }

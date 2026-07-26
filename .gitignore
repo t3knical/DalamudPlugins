@@ -1,3 +1,11 @@
+# Maintainer-only documentation - kept local, never published to the GitHub page.
+INSTRUCTIONS.md
+
+# Packaged plugins are distributed as GitHub Release assets, not committed.
+# Keeping binaries out of git avoids permanently bloating history and is what
+# makes per-asset download counts possible.
+plugins/*/latest.zip
+
 # Build artifacts
 bin/
 obj/

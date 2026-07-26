@@ -1,0 +1,86 @@
+name: Update download counts
+
+# Dalamud shows whatever DownloadCount is in repo.json; it never counts anything
+# itself. Release assets DO track downloads, so this job sums them per plugin and
+# writes the totals back into repo.json.
+on:
+  schedule:
+    - cron: '17 4 * * *'   # daily, 04:17 UTC
+  workflow_dispatch:        # allow manual runs
+  release:
+    types: [published]      # refresh right after a new release goes out
+
+permissions:
+  contents: write
+
+concurrency:
+  group: download-counts
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sum release asset downloads into repo.json
+        id: counts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Every release asset is named <InternalName>.zip. Summing across ALL
+            // releases gives a cumulative per-plugin total that survives version bumps.
+            const releases = await github.paginate(github.rest.repos.listReleases, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              per_page: 100,
+            });
+
+            const counts = {};
+            for (const release of releases) {
+              for (const asset of release.assets) {
+                const match = asset.name.match(/^(.+)\.zip$/);
+                if (!match) continue;
+                const name = match[1];
+                counts[name] = (counts[name] || 0) + asset.download_count;
+              }
+            }
+            core.info(`Asset totals: ${JSON.stringify(counts)}`);
+
+            const path = 'repo.json';
+            if (!fs.existsSync(path)) {
+              core.setFailed('repo.json not found');
+              return;
+            }
+
+            const plugins = JSON.parse(fs.readFileSync(path, 'utf8'));
+            let changed = false;
+
+            for (const plugin of plugins) {
+              const total = counts[plugin.InternalName] || 0;
+              if (plugin.DownloadCount !== total) {
+                core.info(`${plugin.InternalName}: ${plugin.DownloadCount} -> ${total}`);
+                plugin.DownloadCount = total;
+                changed = true;
+              }
+            }
+
+            if (changed) {
+              fs.writeFileSync(path, JSON.stringify(plugins, null, 2) + '\n');
+            } else {
+              core.info('No changes.');
+            }
+            core.setOutput('changed', String(changed));
+
+      - name: Commit updated counts
+        if: steps.counts.outputs.changed == 'true'
+        run: |
+          if [ -n "$(git status --porcelain repo.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add repo.json
+            git commit -m "Update plugin download counts [skip ci]"
+            git push
+          fi
