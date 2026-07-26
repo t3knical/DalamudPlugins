@@ -1,0 +1,37 @@
+{
+  "$comment": "Source map for Update-Repo.ps1. Paths are relative to the repo root. Sources live outside this repo; only built zips are published here.",
+  "baseUrl": "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main",
+  "repoUrl": "https://github.com/t3knical/DalamudPlugins",
+  "plugins": [
+    {
+      "internalName": "HunterV2",
+      "project": "../Hunter.v2/Hunter.csproj"
+    },
+    {
+      "internalName": "PingPlugin",
+      "project": "../Tekz Ping Checker/PingPlugin/PingPlugin.csproj",
+      "license": "../Tekz Ping Checker/LICENSE",
+      "fork": {
+        "upstream": "https://github.com/karashiiro/PingPlugin",
+        "author": "karashiiro",
+        "license": "MIT"
+      }
+    },
+    {
+      "internalName": "PartyMonitor",
+      "project": "../Party Monitor/PartyMonitor/PartyMonitor.csproj"
+    },
+    {
+      "internalName": "PartyRecruitmentHelper",
+      "project": "../PartyRecruitmentHelper/PartyRecruitmentHelper/PartyRecruitmentHelper.csproj"
+    },
+    {
+      "internalName": "TeleporterPlugin",
+      "project": "../TekzTeleporter/TeleporterPlugin/TeleporterPlugin.csproj",
+      "fork": {
+        "upstream": "https://github.com/pohky/TeleporterPlugin",
+        "author": "pohky"
+      }
+    }
+  ]
+}
