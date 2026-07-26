@@ -363,6 +363,18 @@ foreach ($p in $config.plugins) {
         $manifest | Add-Member -NotePropertyName 'RepoUrl' -NotePropertyValue $config.repoUrl -Force
     }
 
+    # Icon: Dalamud shows plugins/<InternalName>/icon.png from this repo when present.
+    # Self-hosting (rather than hot-linking upstream) keeps fork icons working even if
+    # the original repository moves. Icons are committed; only zips are release assets.
+    $iconPath = Join-Path $outDir 'icon.png'
+    if (Test-Path $iconPath) {
+        $manifest | Add-Member -NotePropertyName 'IconUrl' `
+            -NotePropertyValue "$($config.baseUrl)/plugins/$($p.internalName)/icon.png" -Force
+    }
+    elseif (-not $manifest.IconUrl) {
+        Write-Warning "  No icon - add a 512x512 PNG at plugins/$($p.internalName)/icon.png"
+    }
+
     $entries += $manifest
     Write-Host "  OK  v$($manifest.AssemblyVersion)  (API $($manifest.DalamudApiLevel))" -ForegroundColor Green
 }
