@@ -3,9 +3,8 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <a href="#installation"><img alt="Plugins" src="https://img.shields.io/badge/plugins-5-blue"></a>
+  <a href="#installation"><img alt="Plugins" src="https://img.shields.io/badge/plugins-3-blue"></a>
   <a href="#installation"><img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen"></a>
-  <a href="CREDITS.md"><img alt="Credits" src="https://img.shields.io/badge/credits-attribution-orange"></a>
 </p>
 
 ---
@@ -57,34 +56,17 @@ FFLogs lookups and Discord relay.
 Saves your Party Finder slot layouts and automatically reapplies them when members
 leave — no more reconfiguring slots after every join.
 
-### PingPlugin
-A ping display for Dalamud. Unofficial fork kept building against current API levels.
-Original by **[karashiiro](https://github.com/karashiiro)**.
-
-### Teleporter
-Chat commands for teleporting by name — `/tp Quarrymill`, `/tpm South Shroud`, with
-aliases like `/tp home`. Unofficial fork kept building against current API levels.
-Original by **[pohky](https://github.com/pohky)**.
-
 ---
 
 ## Attribution
 
-**PingPlugin** and **Teleporter** are unofficial forks of other developers' work,
-redistributed only to keep builds current with Dalamud API levels. All original credit
-belongs to their authors, and karashiiro's MIT licence travels with the plugin.
-
-Full details in **[CREDITS.md](CREDITS.md)**. If you authored one of these and would
-like it removed, open an issue and it will be taken down.
+See **[CREDITS.md](CREDITS.md)** for acknowledgements and the plugins these build on.
 
 ---
 
 ## Support
 
 Found a bug or have a request? [Open an issue](https://github.com/t3knical/DalamudPlugins/issues).
-
-For issues with the **forked** plugins, please check whether the problem also exists
-upstream before reporting it here.
 
 ---
 

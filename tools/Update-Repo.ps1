@@ -223,10 +223,19 @@ function Find-PackagedZip {
     # per project, so search the project tree and its parent for the newest match.
     $searchRoots = @($ProjectDir, (Split-Path -Parent $ProjectDir)) | Select-Object -Unique
 
+    # Exclude this repo's own plugins/ folder: it holds the STAGED copy from the
+    # previous run, which is often newer than the build output and would otherwise
+    # be picked as the source (and then copied onto itself).
+    $stagingRoot = (Join-Path (Split-Path -Parent $PSScriptRoot) 'plugins')
+
     $candidates = foreach ($root in $searchRoots) {
         if (-not (Test-Path $root)) { continue }
         Get-ChildItem -Path $root -Filter 'latest.zip' -Recurse -File -ErrorAction SilentlyContinue |
-            Where-Object { $_.Directory.Name -eq $InternalName -and $_.FullName -notmatch '\\obj\\' }
+            Where-Object {
+                $_.Directory.Name -eq $InternalName -and
+                $_.FullName -notmatch '\\obj\\' -and
+                -not $_.FullName.StartsWith($stagingRoot, [StringComparison]::OrdinalIgnoreCase)
+            }
     }
 
     return $candidates | Sort-Object LastWriteTime -Descending | Select-Object -First 1

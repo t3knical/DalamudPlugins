@@ -8,30 +8,12 @@
       "project": "../Hunter.v2/Hunter.csproj"
     },
     {
-      "internalName": "PingPlugin",
-      "project": "../Tekz Ping Checker/PingPlugin/PingPlugin.csproj",
-      "license": "../Tekz Ping Checker/LICENSE",
-      "fork": {
-        "upstream": "https://github.com/karashiiro/PingPlugin",
-        "author": "karashiiro",
-        "license": "MIT"
-      }
-    },
-    {
       "internalName": "PartyMonitor",
       "project": "../Party Monitor/PartyMonitor/PartyMonitor.csproj"
     },
     {
       "internalName": "PartyRecruitmentHelper",
       "project": "../PartyRecruitmentHelper/PartyRecruitmentHelper/PartyRecruitmentHelper.csproj"
-    },
-    {
-      "internalName": "TeleporterPlugin",
-      "project": "../TekzTeleporter/TeleporterPlugin/TeleporterPlugin.csproj",
-      "fork": {
-        "upstream": "https://github.com/pohky/TeleporterPlugin",
-        "author": "pohky"
-      }
     }
   ]
 }
