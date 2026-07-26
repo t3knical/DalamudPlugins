@@ -323,22 +323,42 @@ foreach ($p in $config.plugins) {
     Copy-Item $zip.FullName $stagedZip -Force
     Copy-Item $manifestSrc  (Join-Path $outDir "$($p.internalName).json") -Force
 
-    # IconUrl only feeds the installer's browse list. Once a plugin is INSTALLED,
-    # Dalamud looks for an icon bundled inside the package at images/icon.png -
-    # without it the icon vanishes after install. DalamudPackager does not carry
-    # subfolders into the zip, so inject it here for every plugin uniformly.
+    # Icons, for BOTH installer states:
+    #   * browse list  - Dalamud uses IconUrl from repo.json
+    #   * installed    - Dalamud reads the manifest bundled INSIDE the package. If
+    #                    that manifest has no IconUrl it logs "icon is not available"
+    #                    without even attempting a download, which is why icons
+    #                    vanished the moment a plugin was installed.
+    # So the packaged manifest gets IconUrl patched in, and images/icon.png is
+    # bundled alongside it (DalamudPackager does not carry subfolders into the zip).
     $iconSrc = Join-Path $outDir 'icon.png'
     if (Test-Path $iconSrc) {
+        $iconUrl = "$($config.baseUrl)/plugins/$($p.internalName)/icon.png"
+
+        # Patch the manifest that ships inside the package
+        $manifest | Add-Member -NotePropertyName 'IconUrl' -NotePropertyValue $iconUrl -Force
+        $packagedManifest = ($manifest | ConvertTo-Json -Depth 10)
+
         $archive = [System.IO.Compression.ZipFile]::Open($stagedZip, 'Update')
         try {
+            $entryName = "$($p.internalName).json"
+            $existing = $archive.Entries | Where-Object { $_.FullName -ieq $entryName }
+            if ($existing) { $existing.Delete() }
+            $entry = $archive.CreateEntry($entryName)
+            $writer = New-Object System.IO.StreamWriter($entry.Open(), (New-Object System.Text.UTF8Encoding($false)))
+            try { $writer.Write($packagedManifest) } finally { $writer.Dispose() }
+
             $hasIcon = $archive.Entries | Where-Object { $_.FullName -ieq 'images/icon.png' }
             if (-not $hasIcon) {
                 [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
                     $archive, $iconSrc, 'images/icon.png') | Out-Null
-                Write-Host "  Bundled images/icon.png into the package" -ForegroundColor DarkGray
             }
         }
         finally { $archive.Dispose() }
+
+        # Keep the copy beside the zip in step with what shipped
+        $packagedManifest | Set-Content (Join-Path $outDir "$($p.internalName).json") -Encoding UTF8
+        Write-Host "  Icon bundled + IconUrl baked into packaged manifest" -ForegroundColor DarkGray
     }
 
     # Safety gate - refuse to publish anything questionable

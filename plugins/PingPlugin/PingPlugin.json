@@ -1,27 +1,27 @@
-{
-  "Author": "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
-  "Name": "PingPlugin",
-  "InternalName": "PingPlugin",
-  "AssemblyVersion": "2.10.3.0",
-  "Description": "A ping display plugin for Dalamud.\n\nThis is an unofficial fork of PingPlugin by karashiiro, redistributed under the MIT License and rebuilt to keep pace with current Dalamud API levels. All original credit goes to karashiiro.\n\nOriginal project: https://github.com/karashiiro/PingPlugin",
-  "ApplicableVersion": "any",
-  "RepoUrl": "https://github.com/karashiiro/PingPlugin",
-  "Tags": [
-    "ping",
-    "monitor",
-    "utility",
-    "tool"
-  ],
-  "DalamudApiLevel": 15,
-  "LoadRequiredState": 0,
-  "LoadSync": false,
-  "CanUnloadAsync": false,
-  "LoadPriority": 0,
-  "ImageUrls": [
-    "https://raw.githubusercontent.com/karashiiro/PingPlugin/main/Assets/image1.png"
-  ],
-  "IconUrl": "https://raw.githubusercontent.com/karashiiro/PingPlugin/main/Assets/icon.png",
-  "Punchline": "A ping display plugin for Dalamud.",
-  "Changelog": "Unofficial fork rebuilt for the current Dalamud API level.",
-  "AcceptsFeedback": true
+﻿{
+    "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
+    "Name":  "PingPlugin",
+    "InternalName":  "PingPlugin",
+    "AssemblyVersion":  "2.10.3.0",
+    "Description":  "A ping display plugin for Dalamud.\n\nThis is an unofficial fork of PingPlugin by karashiiro, redistributed under the MIT License and rebuilt to keep pace with current Dalamud API levels. All original credit goes to karashiiro.\n\nOriginal project: https://github.com/karashiiro/PingPlugin",
+    "ApplicableVersion":  "any",
+    "RepoUrl":  "https://github.com/karashiiro/PingPlugin",
+    "Tags":  [
+                 "ping",
+                 "monitor",
+                 "utility",
+                 "tool"
+             ],
+    "DalamudApiLevel":  15,
+    "LoadRequiredState":  0,
+    "LoadSync":  false,
+    "CanUnloadAsync":  false,
+    "LoadPriority":  0,
+    "ImageUrls":  [
+                      "https://raw.githubusercontent.com/karashiiro/PingPlugin/main/Assets/image1.png"
+                  ],
+    "Punchline":  "A ping display plugin for Dalamud.",
+    "Changelog":  "Unofficial fork rebuilt for the current Dalamud API level.",
+    "AcceptsFeedback":  true,
+    "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PingPlugin/icon.png"
 }

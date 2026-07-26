@@ -1,24 +1,25 @@
-{
-  "Author": "T3chnicalD3ath Inc.",
-  "Name": "Party Recruitment Helper",
-  "InternalName": "PartyRecruitmentHelper",
-  "AssemblyVersion": "1.0.0.1",
-  "Description": "A plugin that helps manage Party Finder recruitment configurations. Save preset slot layouts and automatically reapply them when party members leave, eliminating the need to manually reconfigure slots repeatedly.",
-  "ApplicableVersion": "any",
-  "RepoUrl": "https://github.com/t3knical/DalamudPlugins",
-  "Tags": [
-    "party",
-    "party finder",
-    "recruitment",
-    "utility",
-    "automation",
-    "quality of life"
-  ],
-  "DalamudApiLevel": 15,
-  "LoadRequiredState": 0,
-  "LoadSync": false,
-  "CanUnloadAsync": false,
-  "LoadPriority": 0,
-  "Punchline": "Save and auto-restore Party Finder slot configurations",
-  "AcceptsFeedback": true
+﻿{
+    "Author":  "T3chnicalD3ath Inc.",
+    "Name":  "Party Recruitment Helper",
+    "InternalName":  "PartyRecruitmentHelper",
+    "AssemblyVersion":  "1.0.0.2",
+    "Description":  "A plugin that helps manage Party Finder recruitment configurations. Save preset slot layouts and automatically reapply them when party members leave, eliminating the need to manually reconfigure slots repeatedly.",
+    "ApplicableVersion":  "any",
+    "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+    "Tags":  [
+                 "party",
+                 "party finder",
+                 "recruitment",
+                 "utility",
+                 "automation",
+                 "quality of life"
+             ],
+    "DalamudApiLevel":  15,
+    "LoadRequiredState":  0,
+    "LoadSync":  false,
+    "CanUnloadAsync":  false,
+    "LoadPriority":  0,
+    "Punchline":  "Save and auto-restore Party Finder slot configurations",
+    "AcceptsFeedback":  true,
+    "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyRecruitmentHelper/icon.png"
 }
