@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <a href="#installation"><img alt="Plugins" src="https://img.shields.io/badge/plugins-3-blue"></a>
+  <a href="#installation"><img alt="Plugins" src="https://img.shields.io/badge/plugins-4-blue"></a>
   <a href="#installation"><img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen"></a>
 </p>
 
@@ -56,11 +56,28 @@ FFLogs lookups and Discord relay.
 Saves your Party Finder slot layouts and automatically reapplies them when members
 leave — no more reconfiguring slots after every join.
 
+### PingWatcher
+Shows your connection latency in the server info bar, with an optional graph and
+monitor window.
+
+**Why this one:** it adds address detection that works under **Linux/Wine**, where the
+standard client-state method fails to resolve the game server address.
+
+> An unofficial fork of [PingPlugin](https://github.com/karashiiro/PingPlugin) by
+> **[karashiiro](https://github.com/karashiiro)**, redistributed under the MIT License.
+> All original credit goes to them. If you play on Windows, the official PingPlugin is
+> the better choice — install that instead.
+
 ---
 
 ## Attribution
 
-See **[CREDITS.md](CREDITS.md)** for acknowledgements and the plugins these build on.
+**PingWatcher** is a fork of another developer's work. Original credit belongs to
+karashiiro, and their MIT licence ships with the plugin
+([`licenses/PingWatcher-LICENSE`](licenses/PingWatcher-LICENSE)).
+
+See **[CREDITS.md](CREDITS.md)** for full acknowledgements. If you authored something
+here and would like it removed, open an issue and it will be taken down.
 
 ---
 
