@@ -1,0 +1,26 @@
+﻿{
+    "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
+    "Name":  "PingWatcher",
+    "InternalName":  "PingWatcher",
+    "AssemblyVersion":  "2.10.3.0",
+    "Description":  "Displays your connection latency in the server info bar, with an optional graph and monitor window.\n\nThis build adds address detection that works under Linux/Wine, where the standard client-state method does not resolve the game server address.\n\nAn unofficial fork of PingPlugin by karashiiro, redistributed under the MIT License. All original credit goes to karashiiro.\n\nOriginal project: https://github.com/karashiiro/PingPlugin",
+    "ApplicableVersion":  "any",
+    "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+    "Tags":  [
+                 "ping",
+                 "latency",
+                 "monitor",
+                 "utility",
+                 "network",
+                 "linux"
+             ],
+    "DalamudApiLevel":  15,
+    "LoadRequiredState":  0,
+    "LoadSync":  false,
+    "CanUnloadAsync":  false,
+    "LoadPriority":  0,
+    "Punchline":  "Ping display with Linux support",
+    "Changelog":  "Rebranded as PingWatcher and rebuilt for the current Dalamud API level.",
+    "AcceptsFeedback":  false,
+    "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PingWatcher/icon.png"
+}

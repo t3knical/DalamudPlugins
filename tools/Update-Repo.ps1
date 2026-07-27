@@ -79,6 +79,22 @@ function Test-ZipSafe {
                 }
             }
 
+            # A package should never contain another package. This catches stale
+            # output being re-zipped when a project builds into a shared, persistent
+            # OutputPath that was not cleaned between builds.
+            if ($entry.Name -like '*.zip') {
+                $problems += "nested archive $($entry.FullName) - stale build output?"
+            }
+
+            # Another plugin's manifest riding along is the same symptom
+            if ($entry.Name -like '*.json' -and $entry.Name -notlike "$Name.json" `
+                -and $entry.Name -notlike '*.deps.json' -and $entry.FullName -eq $entry.Name) {
+                $looksLikeManifest = $entry.Name -notmatch '^(monsters|territories|packages\.lock)\.json$'
+                if ($looksLikeManifest) {
+                    $problems += "unexpected manifest $($entry.FullName) - stale build output?"
+                }
+            }
+
             # Peek inside small json files for credential-shaped values
             if ($entry.Name -like '*.json' -and $entry.Length -lt 512000) {
                 $reader = New-Object System.IO.StreamReader($entry.Open())

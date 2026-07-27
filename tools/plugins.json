@@ -8,6 +8,16 @@
       "project": "../Hunter.v2/Hunter.csproj"
     },
     {
+      "internalName": "PingWatcher",
+      "project": "../Tekz Ping Checker/PingPlugin/PingPlugin.csproj",
+      "license": "../Tekz Ping Checker/LICENSE",
+      "fork": {
+        "upstream": "https://github.com/karashiiro/PingPlugin",
+        "author": "karashiiro",
+        "license": "MIT"
+      }
+    },
+    {
       "internalName": "PartyMonitor",
       "project": "../Party Monitor/PartyMonitor/PartyMonitor.csproj"
     },
