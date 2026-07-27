@@ -39,9 +39,7 @@ Then, in game:
 
 ---
 
-<img align="right" src="plugins/HunterV2/icon.png" width="104">
-
-## Hunter v2
+## <img src="plugins/HunterV2/icon.png" width="34" alt=""> Hunter v2
 
 Point it at the items you need and it does the rest — teleports to the right zone,
 mounts up, flies to spawn points, fights, chains kills, tracks your inventory, and
@@ -77,13 +75,9 @@ the main window, click any item to toggle it.
 > [Lifestream](https://github.com/NightmareXIV/Lifestream) (teleports).
 > [Artisan](https://github.com/PunishXIV/Artisan) is optional, for ingredient import.
 
-<br clear="right">
-
 ---
 
-<img align="right" src="plugins/PartyMonitor/icon.png" width="104">
-
-## Party Monitor
+## <img src="plugins/PartyMonitor/icon.png" width="34" alt=""> Party Monitor
 
 Keeps an eye on your party and tells you when it changes — members joining, members
 leaving — so you notice a quiet departure without staring at the party list.
@@ -104,13 +98,9 @@ for party members.
 > own* credentials, entered in the plugin's settings. They are stored in your local
 > Dalamud config — nothing is bundled with, or transmitted through, this repository.
 
-<br clear="right">
-
 ---
 
-<img align="right" src="plugins/PartyRecruitmentHelper/icon.png" width="104">
-
-## Party Recruitment Helper
+## <img src="plugins/PartyRecruitmentHelper/icon.png" width="34" alt=""> Party Recruitment Helper
 
 Recruiting in Party Finder means rebuilding the same slot layout every time somebody
 joins and leaves. This saves that layout and puts it back for you.
@@ -125,13 +115,9 @@ reverting to open slots.
 **Timing control.** `RoleSelectDelayMs` tunes how quickly it drives the role dropdowns —
 raise it if the game's UI can't keep up on your machine.
 
-<br clear="right">
-
 ---
 
-<img align="right" src="plugins/PingWatcher/icon.png" width="104">
-
-## PingWatcher
+## <img src="plugins/PingWatcher/icon.png" width="34" alt=""> PingWatcher
 
 Shows your connection latency in the server info bar, with an optional live graph and
 monitor window.
@@ -152,8 +138,6 @@ the ping display stays empty.
 >
 > **Playing on Windows? Install the official PingPlugin instead** — it is maintained by
 > its author and stays more current than this fork.
-
-<br clear="right">
 
 ---
 
