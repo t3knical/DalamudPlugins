@@ -1,6 +1,36 @@
 [
     {
         "Author":  "T3chnicalD3ath Inc.",
+        "Name":  "Hunter v2",
+        "InternalName":  "HunterV2",
+        "AssemblyVersion":  "1.1.0.0",
+        "Description":  "Automatically hunts mobs to collect specific items. Teleports to the right zone, mounts and flies to spawn points, engages and chains kills, tracks inventory progress live, and returns home when every enabled item is complete.\n\nOrganise items into hunt lists, import ingredient lists from Artisan (only ingredients that drop from mobs in the database are added), and edit the mob database in game.\n\nRequires vnavmesh, Rotation Solver Reborn and Lifestream.",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "Tags":  [
+                     "hunting",
+                     "gathering",
+                     "automation",
+                     "farming"
+                 ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Automatically hunt mobs for specific items",
+        "AcceptsFeedback":  false,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  4,
+        "LastUpdate":  1785142929,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.1.0.0/HunterV2.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.1.0.0/HunterV2.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.1.0.0/HunterV2.zip",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/icon.png"
+    },
+    {
+        "Author":  "T3chnicalD3ath Inc.",
         "Name":  "Party Monitor",
         "InternalName":  "PartyMonitor",
         "AssemblyVersion":  "1.0.0.6",
@@ -27,36 +57,6 @@
         "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.6/PartyMonitor.zip",
         "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.6/PartyMonitor.zip",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/icon.png"
-    },
-    {
-        "Author":  "T3chnicalD3ath Inc.",
-        "Name":  "Hunter v2",
-        "InternalName":  "HunterV2",
-        "AssemblyVersion":  "1.0.0.11",
-        "Description":  "Automatically hunts mobs to collect specific items. Teleports to the right zone, mounts and flies to spawn points, engages and chains kills, tracks inventory progress live, and returns home when every enabled item is complete.\n\nOrganise items into hunt lists, import ingredient lists from Artisan (only ingredients that drop from mobs in the database are added), and edit the mob database in game.\n\nRequires vnavmesh, Rotation Solver Reborn and Lifestream.",
-        "ApplicableVersion":  "any",
-        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
-        "Tags":  [
-                     "hunting",
-                     "gathering",
-                     "automation",
-                     "farming"
-                 ],
-        "DalamudApiLevel":  15,
-        "LoadRequiredState":  0,
-        "LoadSync":  false,
-        "CanUnloadAsync":  false,
-        "LoadPriority":  0,
-        "Punchline":  "Automatically hunt mobs for specific items",
-        "AcceptsFeedback":  false,
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  4,
-        "LastUpdate":  1785140776,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.11/HunterV2.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.11/HunterV2.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.0.0.11/HunterV2.zip",
-        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/icon.png"
     },
     {
         "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
