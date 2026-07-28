@@ -461,8 +461,10 @@ foreach ($p in $config.plugins) {
 
     if ($Publish) {
         try {
+            # "Hunter v1.3.1.2" - the v reads as a version marker; without it the title
+            # looks like a name that happens to end in numbers.
             $download = Publish-Release -Slug $repoSlug -Tag $tag -AssetPath $stagedZip `
-                                        -AssetName $assetName -Title "$($manifest.Name) $($manifest.AssemblyVersion)"
+                                        -AssetName $assetName -Title "$($manifest.Name) v$($manifest.AssemblyVersion)"
             Write-Host "  Released: $tag" -ForegroundColor DarkGray
         }
         catch {
