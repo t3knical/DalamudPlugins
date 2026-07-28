@@ -60,8 +60,10 @@ if (-not (Test-Path $licenseDir)) { New-Item -ItemType Directory -Path $licenseD
 $forbiddenNames = @(
     '*.pdb', '.env', '.env.*', 'secrets.json', 'appsettings.Development.json',
     '*.local.json', '*.user', 'settings.local.json',
-    # Runtime debris - debug logs can capture session/party/character detail
-    '*.log', '*debug*', '*.tmp', '*.bak', '*.dmp'
+    # Runtime debris - debug logs and scraped pages can capture session, party,
+    # character and local-path detail. These must never reach a released package.
+    '*.log', '*debug*', '*.tmp', '*.bak', '*.dmp',
+    '*_rendered.html', 'pf_debug*', 'ts_debug*', 'fflogsapi.txt'
 )
 # Config keys that would indicate baked-in credentials.
 $secretPattern = '(?i)"(discord(bot)?token|bottoken|clientsecret|client_secret|apikey|api_key|password|access_token|refresh_token|webhookurl)"\s*:\s*"[^"]{8,}"'
@@ -384,6 +386,46 @@ foreach ($p in $config.plugins) {
         # Keep the copy beside the zip in step with what shipped
         $packagedManifest | Set-Content (Join-Path $outDir "$($p.internalName).json") -Encoding UTF8
         Write-Host "  Icon bundled + IconUrl baked into packaged manifest" -ForegroundColor DarkGray
+    }
+
+    # Extra payload: companion binaries a plugin needs at runtime. DalamudPackager
+    # only packages the plugin's own output, so anything in a subfolder (such as the
+    # TempScraper helper process) has to be added here.
+    if ($p.payload)
+    {
+        foreach ($load in $p.payload)
+        {
+            $srcDir = Join-Path $repoRoot $load.source
+            if (-not (Test-Path $srcDir))
+            {
+                Write-Warning "  Payload source missing, skipped: $srcDir"
+                continue
+            }
+
+            $skip = if ($load.exclude) { $load.exclude } else { @() }
+            $files = Get-ChildItem -Path $srcDir -Recurse -File | Where-Object {
+                $name = $_.Name
+                -not ($skip | Where-Object { $name -like $_ })
+            }
+
+            $archive = [System.IO.Compression.ZipFile]::Open($stagedZip, 'Update')
+            try
+            {
+                foreach ($file in $files)
+                {
+                    $rel = $file.FullName.Substring((Resolve-Path $srcDir).Path.Length).TrimStart('\', '/')
+                    $entryPath = "$($load.target)/$($rel -replace '\\', '/')"
+                    $existingEntry = $archive.Entries | Where-Object { $_.FullName -ieq $entryPath }
+                    if ($existingEntry) { $existingEntry.Delete() }
+                    [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                        $archive, $file.FullName, $entryPath) | Out-Null
+                }
+            }
+            finally { $archive.Dispose() }
+
+            $mb = [math]::Round((($files | Measure-Object Length -Sum).Sum / 1MB), 1)
+            Write-Host "  Bundled payload '$($load.target)': $($files.Count) file(s), $mb MB" -ForegroundColor DarkGray
+        }
     }
 
     # Safety gate - refuse to publish anything questionable

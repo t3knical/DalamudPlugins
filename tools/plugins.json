@@ -19,7 +19,15 @@
     },
     {
       "internalName": "PartyMonitor",
-      "project": "../Party Monitor/PartyMonitor/PartyMonitor.csproj"
+      "project": "../Party Monitor/PartyMonitor/PartyMonitor.csproj",
+      "$comment": "TempScraper is a separate console process (Selenium) that Party Monitor launches to read Tomestone.gg. DalamudPackager does not carry subfolders, so it is bundled explicitly.",
+      "payload": [
+        {
+          "source": "../Party Monitor/TempScraper/bin/Release/net10.0",
+          "target": "TempScraper",
+          "exclude": [ "*.pdb", "*.log", "*debug*", "*_rendered.html" ]
+        }
+      ]
     },
     {
       "internalName": "PartyRecruitmentHelper",
