@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Party Recruitment Helper",
     "InternalName":  "PartyRecruitmentHelper",
-    "AssemblyVersion":  "1.0.1.0",
+    "AssemblyVersion":  "1.0.2.0",
     "Description":  "A plugin that helps manage Party Finder recruitment configurations. Save preset slot layouts and automatically reapply them when party members leave, eliminating the need to manually reconfigure slots repeatedly.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
