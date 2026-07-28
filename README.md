@@ -32,14 +32,14 @@ Then, in game:
 
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
-| <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter v2** | Farms mob-drop items automatically, end to end | `/hunter` |
+| <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/hunter` |
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
 | <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/pfhelper` |
 | <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/ping` |
 
 ---
 
-## <img src="plugins/HunterV2/icon.png" width="34" alt=""> Hunter v2
+## <img src="plugins/HunterV2/icon.png" width="34" alt=""> Hunter
 
 Point it at the items you need and it does the rest — teleports to the right zone,
 mounts up, flies to spawn points, fights, chains kills, tracks your inventory, and
@@ -172,7 +172,7 @@ karashiiro, and their MIT licence ships alongside it in
 [`licenses/PingWatcher-LICENSE`](licenses/PingWatcher-LICENSE).
 
 See **[CREDITS.md](CREDITS.md)** for full acknowledgements, including the projects that
-inspired Hunter v2. If you authored something here and would like it removed, open an
+inspired Hunter. If you authored something here and would like it removed, open an
 issue and it will be taken down.
 
 ---

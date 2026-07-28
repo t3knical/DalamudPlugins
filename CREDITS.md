@@ -4,7 +4,7 @@
 
 Written and maintained by **T3chnicalD3ath Inc.**:
 
-- Hunter v2
+- Hunter
 - Party Monitor
 - Party Recruitment Helper
 
@@ -34,7 +34,7 @@ author and stays more current than this fork.
 
 ## Acknowledgements
 
-**Hunter v2** takes design inspiration from
+**Hunter** takes design inspiration from
 [GatherBuddyReborn](https://github.com/FFXIV-CombatReborn/GatherBuddyReborn) — its
 movement and mount-handling patterns, and its list-management UI conventions. No
 GatherBuddyReborn code is redistributed here.
@@ -43,7 +43,7 @@ GatherBuddyReborn code is redistributed here.
 
 ## Runtime dependencies
 
-Hunter v2 talks to these plugins over IPC or chat commands. It does not bundle them —
+Hunter talks to these plugins over IPC or chat commands. It does not bundle them —
 install them separately:
 
 - [vnavmesh](https://github.com/awgil/ffxiv_navmesh) — pathfinding
