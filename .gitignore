@@ -35,3 +35,6 @@ pluginConfigs/
 *.log
 logs/
 graphify-out/
+
+# Private maintainer memory file - detailed internal notes, never publish
+MEMORY.md
