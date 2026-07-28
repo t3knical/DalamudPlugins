@@ -94,9 +94,33 @@ for party members.
 
 **Tunable.** Set the zone it watches and how often it refreshes.
 
-> **Privacy:** Discord and FFLogs integration are entirely optional and require *your
-> own* credentials, entered in the plugin's settings. They are stored in your local
-> Dalamud config — nothing is bundled with, or transmitted through, this repository.
+#### Why it ships with a helper process (TempScraper)
+
+Party Monitor pulls raid progression from **[Tomestone.gg](https://tomestone.gg)**, which
+renders its character pages with JavaScript. A plain HTTP request returns an empty
+shell, so the data has to be read from a real browser engine. That work is done by
+**TempScraper**, a small console program bundled at `TempScraper/` inside the plugin.
+
+It runs as a **separate process** rather than inside the plugin for three reasons:
+
+- **The game thread stays responsive.** Browser automation is slow and blocking;
+  running it in-process would stutter FFXIV every time a party member was looked up.
+- **A hung or crashed scrape can't take the game with it.** The worst case is a dead
+  child process, which the plugin simply restarts.
+- **Selenium's dependencies don't belong in the game.** Loading a browser-automation
+  stack into the FFXIV process is a much larger surface than launching a sandboxed
+  child.
+
+It is started **once** and kept alive, then fed lookups over stdin — so checking a full
+party is a series of requests against one warm browser session rather than a cold start
+per person. Nothing runs until you actually use the feature.
+
+> **Privacy and credentials:** Discord and FFLogs integration are entirely optional and
+> require *your own* credentials, entered in the plugin's settings. They are stored in
+> your local Dalamud config and passed to TempScraper through environment variables —
+> never compiled into the binaries, never written to the command line, and never
+> included in this repository. Diagnostic logging is off unless you set
+> `PARTYMONITOR_DEBUG`, and writes to your temp folder when enabled.
 
 ---
 
