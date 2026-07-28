@@ -1,6 +1,35 @@
 [
     {
         "Author":  "T3chnicalD3ath Inc.",
+        "Name":  "Party Monitor",
+        "InternalName":  "PartyMonitor",
+        "AssemblyVersion":  "1.1.0.0",
+        "Description":  "Monitors your party and reports changes. Tracks members joining and leaving, can look up encounter logs, and optionally relays party activity to a Discord channel.\n\nDiscord and FFLogs integration are optional and require you to supply your own credentials in the plugin settings. No credentials are bundled with the plugin.",
+        "ApplicableVersion":  "any",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "Tags":  [
+                     "party",
+                     "monitor",
+                     "utility"
+                 ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Monitors party changes.",
+        "AcceptsFeedback":  true,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  4,
+        "LastUpdate":  1785207200,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.1.0.0/PartyMonitor.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.1.0.0/PartyMonitor.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.1.0.0/PartyMonitor.zip",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/icon.png"
+    },
+    {
+        "Author":  "T3chnicalD3ath Inc.",
         "Name":  "Hunter v2",
         "InternalName":  "HunterV2",
         "AssemblyVersion":  "1.1.1.0",
@@ -28,35 +57,6 @@
         "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.1.1.0/HunterV2.zip",
         "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/HunterV2-v1.1.1.0/HunterV2.zip",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/HunterV2/icon.png"
-    },
-    {
-        "Author":  "T3chnicalD3ath Inc.",
-        "Name":  "Party Monitor",
-        "InternalName":  "PartyMonitor",
-        "AssemblyVersion":  "1.0.0.6",
-        "Description":  "Monitors your party and reports changes. Tracks members joining and leaving, can look up encounter logs, and optionally relays party activity to a Discord channel.\n\nDiscord and FFLogs integration are optional and require you to supply your own credentials in the plugin settings. No credentials are bundled with the plugin.",
-        "ApplicableVersion":  "any",
-        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
-        "Tags":  [
-                     "party",
-                     "monitor",
-                     "utility"
-                 ],
-        "DalamudApiLevel":  15,
-        "LoadRequiredState":  0,
-        "LoadSync":  false,
-        "CanUnloadAsync":  false,
-        "LoadPriority":  0,
-        "Punchline":  "Monitors party changes.",
-        "AcceptsFeedback":  true,
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  4,
-        "LastUpdate":  1785142069,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.6/PartyMonitor.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.6/PartyMonitor.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.0.0.6/PartyMonitor.zip",
-        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/icon.png"
     },
     {
         "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
