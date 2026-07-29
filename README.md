@@ -30,12 +30,12 @@ Then, in game:
 
 ## At a glance
 
-| | Plugin | What it does | Command |
-|:--:|---|---|---|
-| <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/hunter` |
-| <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
-| <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/pfhelper` |
-| <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/ping` |
+| | Plugin | What it does | Command | Short |
+|:--:|---|---|---|---|
+| <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/hunter` | `/htr` |
+| <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` | — |
+| <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/pfhelper` | `/prh` |
+| <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/ping` | `/pwr` |
 
 ---
 
@@ -148,7 +148,7 @@ monitor window.
 
 | Command | Does |
 |---|---|
-| `/ping` | Toggle the ping display |
+| `/ping` (`/pwr`) | Toggle the ping display |
 | `/pinggraph` | Toggle the latency graph |
 | `/pingconfig` | Open settings |
 
