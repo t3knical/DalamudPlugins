@@ -48,7 +48,9 @@ heads home when everything is done.
 **Hunt lists.** Items live in named lists you can toggle on and off, like
 GatherBuddyReborn's auto-gather lists. Build one per project ("Cooking mats", "GC
 turn-ins") and switch between them instead of retyping entries. List order is priority
-order, and lists reorder by drag and drop.
+order, and lists reorder by drag and drop. When an item drops from more than one mob, the
+**Found in** column turns into a picker so you can pin it to the mob — and therefore the
+zone — you'd rather farm it from.
 
 **Import from Artisan.** Pull a crafting list's full ingredient totals straight from
 [Artisan](https://github.com/PunishXIV/Artisan). Only ingredients that actually drop
@@ -60,6 +62,27 @@ and spawn coordinates. The *Add current position* button captures wherever you'r
 standing, so building a patrol route is stand → click → repeat. Stored as `mobs.json`
 in the plugin config folder, so it survives updates.
 
+**Loot learning — the database grows itself.** Turn on *Learn drops from kills* in the
+**Loot Learner** tab and Hunter watches what you actually loot. It snapshots your bags
+when a fight starts, snapshots them again a couple of seconds after the mob dies, and
+credits anything that went **up in quantity** to that mob — so an item you already own a
+stack of still registers.
+
+- **Known mob, new item** → the item is appended to that mob's loot table.
+- **Unknown mob** → the entry is created for you, seeded with its base ID, zone and the
+  spot it died at.
+
+It works from **manual kills**; auto-hunt does not have to be running, which is the point
+— the bot can only route to mobs it already knows, so discovery has to happen while
+*you* are the one fighting. Only your own bags are watched, so retainer and saddlebag
+movement can't be mistaken for a drop.
+
+Everything it learns is listed in the session log on that tab, with an **Undo** button per
+row. That matters, because anything you pick up in the seconds after a kill gets credited
+to it — a gathering node, a desynth, or a party member's trade landing in that window can
+teach it something wrong. Live diagnostics (baseline held, current watch target, awaiting
+loot) are on the **Debug** tab.
+
 **Smart travel.** Movement is a port of GatherBuddyReborn's system — vnavmesh over IPC,
 real mount actions rather than simulated keypresses, and flight decided by your actual
 aether-current completion per zone. Because mobs *move*, the bot snapshots a target's
@@ -68,7 +91,9 @@ mid-air, lands, and only then chases on the ground.
 
 **Live overlay.** A compact always-on-top window showing state, per-item progress with
 item icons, and the current target. Click the header to start/stop, right-click to open
-the main window, click any item to toggle it.
+the main window, click any item to toggle it. It hides itself while no list or item is
+enabled and reappears the moment you enable one, so it isn't sitting on your screen doing
+nothing (switchable in *Config → Overlay*).
 
 > **Requires** [vnavmesh](https://github.com/awgil/ffxiv_navmesh) (pathfinding),
 > Rotation Solver Reborn (combat) and
