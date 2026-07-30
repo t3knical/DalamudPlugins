@@ -83,6 +83,12 @@ to it — a gathering node, a desynth, or a party member's trade landing in that
 teach it something wrong. Live diagnostics (baseline held, current watch target, awaiting
 loot) are on the **Debug** tab.
 
+**Stays out of other players' way.** If someone is already fighting at the spawn Hunter is
+heading for, it backs off, marks that spawn as taken for a few minutes, and goes and works
+a different item on your list instead of competing for their kills. It comes back later. A
+fight already in progress is never abandoned, and party members don't count as competition.
+Radius and cooldown are tunable in *Config → Sharing the World*.
+
 **Smart travel.** Movement is a port of GatherBuddyReborn's system — vnavmesh over IPC,
 real mount actions rather than simulated keypresses, and flight decided by your actual
 aether-current completion per zone. Because mobs *move*, the bot snapshots a target's
