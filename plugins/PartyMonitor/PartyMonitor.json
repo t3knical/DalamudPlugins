@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Party Monitor",
     "InternalName":  "PartyMonitor",
-    "AssemblyVersion":  "1.1.1.0",
+    "AssemblyVersion":  "1.1.2.0",
     "Description":  "Monitors your party and reports changes. Tracks members joining and leaving, can look up encounter logs, and optionally relays party activity to a Discord channel.\n\nDiscord and FFLogs integration are optional and require you to supply your own credentials in the plugin settings. No credentials are bundled with the plugin.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",

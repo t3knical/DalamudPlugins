@@ -142,9 +142,12 @@ It runs as a **separate process** rather than inside the plugin for three reason
   stack into the FFXIV process is a much larger surface than launching a sandboxed
   child.
 
-It is started **once** and kept alive, then fed lookups over stdin — so checking a full
-party is a series of requests against one warm browser session rather than a cold start
-per person. Nothing runs until you actually use the feature.
+It is fed lookups over stdin and keeps its browser warm between them, so checking a full
+party is a series of requests against one session rather than a cold start per person.
+The browser is treated as **disposable**: nothing launches until you actually use the
+feature, it is recycled every so many lookups, and it shuts down completely once idle,
+restarting on demand. A long-lived headless Chrome on a JavaScript-heavy page will
+otherwise grow without bound — it was reaching multiple gigabytes before this.
 
 > **Privacy and credentials:** Discord and FFLogs integration are entirely optional and
 > require *your own* credentials, entered in the plugin's settings. They are stored in
