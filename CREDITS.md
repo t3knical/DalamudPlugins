@@ -12,6 +12,24 @@ Written and maintained by **T3chnicalD3ath Inc.**:
 
 ## Forked plugins
 
+### Occult Helper — forked from OccultHelper by [OhKannaDuh](https://github.com/OhKannaDuh)
+
+- **Original project:** https://github.com/OhKannaDuh/OccultHelper (itself descended from
+  `OhKannaDuh/BOCCHI`)
+- **Licence:** GNU AGPLv3
+- **Full licence text:** [`licenses/OccultHelper-LICENSE`](licenses/OccultHelper-LICENSE)
+- **Why the fork exists:** ongoing maintenance and feature work for the Occult Crescent zone
+  (Cosmic Exploration) — automated treasure/pot/carrot hunt routing, FATE/CE pathfinding, an
+  "Illegal Mode" autopilot, and a status overlay, built on top of the original project.
+- Everything BOCCHI/OccultHelper-branded was renamed to `OccultHelper` throughout the codebase, but
+  the AGPLv3 lineage and original authorship remain — this is a derivative work, not an original.
+
+The AGPLv3 requires that conveyed and modified versions carry the licence and give users access to
+source; both are satisfied by this being a public fork on GitHub. All original credit for the base
+project belongs to OhKannaDuh.
+
+---
+
 ### PingWatcher — forked from PingPlugin by [karashiiro](https://github.com/karashiiro)
 
 - **Original project:** https://github.com/karashiiro/PingPlugin

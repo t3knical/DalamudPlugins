@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <img alt="Plugins" src="https://img.shields.io/badge/plugins-4-blue">
+  <img alt="Plugins" src="https://img.shields.io/badge/plugins-5-blue">
   <img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen">
   <img alt="License" src="https://img.shields.io/badge/license-see%20CREDITS-lightgrey">
 </p>
@@ -33,6 +33,7 @@ Then, in game:
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
+| <img src="plugins/OccultHelper/icon.png" width="46"> | **Occult Helper** | Automates Occult Crescent — treasure hunts, FATEs/CEs, Illegal Mode | `/och` |
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
 | <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/prh` |
 | <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/pwr` |
@@ -108,6 +109,34 @@ nothing (switchable in *Config → Overlay*).
 
 ---
 
+## <img src="plugins/OccultHelper/icon.png" width="34" alt=""> Occult Helper
+
+Automates the grind in **Occult Crescent** (Cosmic Exploration): routes treasure, pot, and carrot
+hunts end to end, tracks FATEs and Critical Encounters with a panel that tells you what they reward
+and pathfinds you there, and includes an "Illegal Mode" autopilot for when you'd rather not touch any
+of it yourself.
+
+**Hunt routing.** Treasure, pot-chest, and carrot hunts all get real route optimization rather than
+"walk to the nearest thing" — 2-opt/Or-opt passes, 3D distance, and resumable progress if you get
+interrupted mid-run.
+
+**FATE/CE panel.** Shows what's active, what it rewards, and can path you straight to it.
+
+**Illegal Mode.** A more hands-off autopilot layered on top of the CE/FATE core — parking, targeting,
+reachability gating, and countdown tracking.
+
+**Status overlay.** A small always-on-top popout with live per-mode sections (world state, AI status,
+chest/carrot hunt progress) so you don't need the main window open.
+
+**Currency & experience trackers**, gearset/Phantom Job presets per activity, and a config UI with
+tabbed sections.
+
+> An unofficial fork of [OccultHelper](https://github.com/OhKannaDuh/OccultHelper) by
+> **[OhKannaDuh](https://github.com/OhKannaDuh)**, redistributed under the GNU AGPLv3. All credit for
+> the original project goes to them; this fork carries ongoing maintenance and new features on top.
+
+---
+
 ## <img src="plugins/PartyMonitor/icon.png" width="34" alt=""> Party Monitor
 
 Keeps an eye on your party and tells you when it changes — members joining, members
@@ -163,15 +192,26 @@ otherwise grow without bound — it was reaching multiple gigabytes before this.
 Recruiting in Party Finder means rebuilding the same slot layout every time somebody
 joins and leaves. This saves that layout and puts it back for you.
 
-**Slot presets.** Save a Party Finder slot configuration once and reapply it whenever
-you need it.
+**Status at a glance.** The first tab tells you in plain words what is going to happen —
+whether the recruitment window is open, how many slots are filled, which preset is active,
+and what the last auto-reapply actually did. One button applies the active preset.
 
-**Auto-reapply.** Turn on `AutoReapply` and the layout is restored automatically when a
-member leaves, so your listing keeps recruiting the roles you actually want instead of
-reverting to open slots.
+**Presets.** A searchable list on the left, the editor on the right. Right-click any
+preset to set it active, apply it, rename, duplicate or delete it. A preset stores the
+whole listing: duty and category, objective, description, minimum item level, completion
+status, one-player-per-job, and which jobs each of the eight slots accepts — captured
+straight from the game's own Recruitment Criteria window.
 
-**Timing control.** `RoleSelectDelayMs` tunes how quickly it drives the role dropdowns —
-raise it if the game's UI can't keep up on your machine.
+**Auto-reapply.** When a member leaves, the game reverts your listing to open slots. This
+puts the layout straight back, so you keep recruiting the roles you actually want. By
+default it restores just the slots and leaves your criteria alone — there's an option to
+re-apply the whole preset instead.
+
+**Timing control.** It drives the game's real dropdowns, so it has to pace itself. Raise
+the role-select delay if slots come out half-applied on your machine.
+
+> Everything happens through the game's own Party Finder window — no network calls, and
+> presets stay in the plugin's config folder.
 
 ---
 
@@ -201,9 +241,9 @@ the ping display stays empty.
 
 ## Attribution
 
-**PingWatcher** is a fork of another developer's work. Original credit belongs to
-karashiiro, and their MIT licence ships alongside it in
-[`licenses/PingWatcher-LICENSE`](licenses/PingWatcher-LICENSE).
+**PingWatcher** and **Occult Helper** are forks of other developers' work. Original credit for
+PingWatcher belongs to karashiiro (MIT, [`licenses/PingWatcher-LICENSE`](licenses/PingWatcher-LICENSE)),
+and for Occult Helper to OhKannaDuh (AGPLv3, [`licenses/OccultHelper-LICENSE`](licenses/OccultHelper-LICENSE)).
 
 See **[CREDITS.md](CREDITS.md)** for full acknowledgements, including the projects that
 inspired Hunter. If you authored something here and would like it removed, open an
@@ -215,8 +255,8 @@ issue and it will be taken down.
 
 Found a bug or have a request? [Open an issue](https://github.com/t3knical/DalamudPlugins/issues).
 
-For **PingWatcher**, please check whether the problem also happens with the upstream
-plugin before reporting it here.
+For **PingWatcher** or **Occult Helper**, please check whether the problem also happens with the
+upstream project before reporting it here.
 
 ---
 

@@ -32,6 +32,16 @@
     {
       "internalName": "PartyRecruitmentHelper",
       "project": "../PartyRecruitmentHelper/PartyRecruitmentHelper/PartyRecruitmentHelper.csproj"
+    },
+    {
+      "internalName": "OccultHelper",
+      "project": "../OccultHelper.v2/OccultHelper/OccultHelper.csproj",
+      "license": "../OccultHelper.v2/LICENSE",
+      "fork": {
+        "upstream": "https://github.com/OhKannaDuh/OccultHelper",
+        "author": "OhKannaDuh",
+        "license": "AGPL-3.0"
+      }
     }
   ]
 }

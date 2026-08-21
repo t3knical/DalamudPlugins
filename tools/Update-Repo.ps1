@@ -51,7 +51,7 @@ $pluginsDir = Join-Path $repoRoot 'plugins'
 $licenseDir = Join-Path $repoRoot 'licenses'
 
 if (-not (Test-Path $configPath)) { throw "Missing config: $configPath" }
-$config = Get-Content $configPath -Raw | ConvertFrom-Json
+$config = Get-Content $configPath -Raw -Encoding UTF8 | ConvertFrom-Json
 
 if (-not (Test-Path $pluginsDir)) { New-Item -ItemType Directory -Path $pluginsDir | Out-Null }
 if (-not (Test-Path $licenseDir)) { New-Item -ItemType Directory -Path $licenseDir | Out-Null }
@@ -340,7 +340,7 @@ foreach ($p in $config.plugins) {
         $failed += $p.internalName
         continue
     }
-    $manifest = Get-Content $manifestSrc -Raw | ConvertFrom-Json
+    $manifest = Get-Content $manifestSrc -Raw -Encoding UTF8 | ConvertFrom-Json
 
     # Stage the package here first, then scan and upload THAT exact file, so what
     # gets checked is what gets published.
@@ -513,7 +513,7 @@ foreach ($p in $config.plugins) {
 
 # Preserve entries for plugins we skipped this run
 if ($Plugin -and (Test-Path $repoJsonPath)) {
-    $existing = Get-Content $repoJsonPath -Raw | ConvertFrom-Json
+    $existing = Get-Content $repoJsonPath -Raw -Encoding UTF8 | ConvertFrom-Json
     $updatedNames = $entries | ForEach-Object { $_.InternalName }
     foreach ($old in $existing) {
         if ($updatedNames -notcontains $old.InternalName) { $entries += $old }
