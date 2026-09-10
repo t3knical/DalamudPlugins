@@ -2,7 +2,7 @@
     "Author":  "Anmi (fork maintained by T3chnicalD3ath Inc.)",
     "Name":  "Beast Master Helper",
     "InternalName":  "BeastMasterHelper",
-    "AssemblyVersion":  "0.2.2.0",
+    "AssemblyVersion":  "0.2.3.0",
     "Description":  "Tracks the Beastmaster quest chain and beast-catalogue collection progress, auto-recording captures from chat and offering navigation to quest and catalogue targets. Works with vnavmesh for same-map travel and Lifestream for cross-map teleports.\n\nAn English fork of Anmi\u0027s Beastmaster plugin.",
     "ApplicableVersion":  "any",
     "Tags":  [
