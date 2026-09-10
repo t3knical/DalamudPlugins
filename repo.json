@@ -3,7 +3,7 @@
         "Author":  "t3knical (fork of Beastmaster by Anmi)",
         "Name":  "Beast Master Helper",
         "InternalName":  "BeastMasterHelper",
-        "AssemblyVersion":  "0.1.1.0",
+        "AssemblyVersion":  "0.1.2.0",
         "Description":  "Tracks the Beastmaster quest chain and beast-catalogue collection progress, auto-recording captures from chat and offering navigation to quest and catalogue targets. Works with vnavmesh for same-map travel and Lifestream for cross-map teleports.\n\nAn English fork of Anmi\u0027s Beastmaster plugin.",
         "ApplicableVersion":  "any",
         "Tags":  [
@@ -24,10 +24,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1789007829,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.1.0/BeastMasterHelper.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.1.0/BeastMasterHelper.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.1.0/BeastMasterHelper.zip",
+        "LastUpdate":  1789009957,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.2.0/BeastMasterHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.2.0/BeastMasterHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.1.2.0/BeastMasterHelper.zip",
         "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/BeastMasterHelper/icon.png"
     },
