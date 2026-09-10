@@ -1,5 +1,37 @@
 [
     {
+        "Author":  "Anmi (fork maintained by T3chnicalD3ath Inc.)",
+        "Name":  "Beast Master Helper",
+        "InternalName":  "BeastMasterHelper",
+        "AssemblyVersion":  "0.2.1.0",
+        "Description":  "Tracks the Beastmaster quest chain and beast-catalogue collection progress, auto-recording captures from chat and offering navigation to quest and catalogue targets. Works with vnavmesh for same-map travel and Lifestream for cross-map teleports.\n\nAn English fork of Anmi\u0027s Beastmaster plugin.",
+        "ApplicableVersion":  "any",
+        "Tags":  [
+                     "beastmaster",
+                     "tracker",
+                     "utility"
+                 ],
+        "CategoryTags":  [
+                             "Utility"
+                         ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Track Beastmaster job progress and your beast catalogue.",
+        "AcceptsFeedback":  true,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "LastUpdate":  1789026146,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.1.0/BeastMasterHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.1.0/BeastMasterHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.1.0/BeastMasterHelper.zip",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/BeastMasterHelper/icon.png"
+    },
+    {
         "Author":  "OhKannaDuh (fork maintained by T3chnicalD3ath)",
         "Name":  "Occult Helper",
         "InternalName":  "OccultHelper",
@@ -32,38 +64,6 @@
         "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/OccultHelper-v2.1.6.2/OccultHelper.zip",
         "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/OccultHelper-v2.1.6.2/OccultHelper.zip",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/OccultHelper/icon.png"
-    },
-    {
-        "Author":  "Anmi (fork maintained by T3chnicalD3ath Inc.)",
-        "Name":  "Beast Master Helper",
-        "InternalName":  "BeastMasterHelper",
-        "AssemblyVersion":  "0.2.0.0",
-        "Description":  "Tracks the Beastmaster quest chain and beast-catalogue collection progress, auto-recording captures from chat and offering navigation to quest and catalogue targets. Works with vnavmesh for same-map travel and Lifestream for cross-map teleports.\n\nAn English fork of Anmi\u0027s Beastmaster plugin.",
-        "ApplicableVersion":  "any",
-        "Tags":  [
-                     "beastmaster",
-                     "tracker",
-                     "utility"
-                 ],
-        "CategoryTags":  [
-                             "Utility"
-                         ],
-        "DalamudApiLevel":  15,
-        "LoadRequiredState":  0,
-        "LoadSync":  false,
-        "CanUnloadAsync":  false,
-        "LoadPriority":  0,
-        "Punchline":  "Track Beastmaster job progress and your beast catalogue.",
-        "AcceptsFeedback":  true,
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  0,
-        "LastUpdate":  1789025518,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.0.0/BeastMasterHelper.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.0.0/BeastMasterHelper.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.2.0.0/BeastMasterHelper.zip",
-        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
-        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/BeastMasterHelper/icon.png"
     },
     {
         "Author":  "karashiiro (fork maintained by T3chnicalD3ath Inc.)",
