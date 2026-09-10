@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <img alt="Plugins" src="https://img.shields.io/badge/plugins-5-blue">
+  <img alt="Plugins" src="https://img.shields.io/badge/plugins-6-blue">
   <img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen">
   <img alt="License" src="https://img.shields.io/badge/license-see%20CREDITS-lightgrey">
 </p>
