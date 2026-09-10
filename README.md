@@ -32,11 +32,45 @@ Then, in game:
 
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
+| <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Tracks Beastmaster quests and your beast catalogue | `/bmh` |
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
 | <img src="plugins/OccultHelper/icon.png" width="46"> | **Occult Helper** | Automates Occult Crescent — treasure hunts, FATEs/CEs, Illegal Mode | `/och` |
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
 | <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/prh` |
 | <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/pwr` |
+
+---
+
+## <img src="plugins/BeastMasterHelper/icon.png" width="34" alt=""> Beast Master Helper
+
+Tracks the Beastmaster job quest chain and your beast catalogue, and can walk you to
+whatever you still need.
+
+> **An English fork of [Beastmaster](https://github.com/anmili2022/Beastmaster) by
+> [Anmi](https://github.com/anmili2022).** All the original work is theirs — this fork
+> only translates it and makes it run on the Global client.
+
+**Catalogue.** All 50 beasts with attribute, location, level range and coordinates.
+Navigate to a spawn, or open the Duty Finder for the ones that live in dungeons.
+
+**Quest chain.** Progress read from your client's own quest state, with navigation to the
+giver of anything unfinished.
+
+**Auto-capture.** Optional, and only ever acts on a target you selected yourself —
+captures below a HP threshold you set, then runs the combo.
+
+**Gauge readout.** Read-only view of Tenacity, Beast Power, Beast Heart and Beast Soul,
+with a written guide to the cooperation gauge. It never writes to game memory.
+
+**Reads in your language, not just English.** Upstream hardcoded Chinese creature, zone,
+duty and item names and then matched game text against them. This fork looks names up
+from the client's own data by row id instead, so it displays correctly whatever language
+you play in — and, unlike a plain translation, the capture and combo logic actually
+matches what the game reports.
+
+> **Requires** [vnavmesh](https://github.com/awgil/ffxiv_navmesh) and
+> [Lifestream](https://github.com/NightmareXIV/Lifestream) for navigation — both optional;
+> without them it still tracks everything, it just cannot walk you there.
 
 ---
 

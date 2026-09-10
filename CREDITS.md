@@ -12,6 +12,20 @@ Written and maintained by **T3chnicalD3ath Inc.**:
 
 ## Forked plugins
 
+### Beast Master Helper — forked from Beastmaster by [Anmi](https://github.com/anmili2022)
+
+- **Original project:** https://github.com/anmili2022/Beastmaster (forked at commit `035a24c`)
+- **Licence:** **none stated.** The upstream repository contains no licence file, and GitHub
+  reports no licence for it. No redistribution terms are given by the author.
+- **Why the fork exists:** upstream targets the Chinese client and hardcodes Chinese creature,
+  zone, duty, action and item names, comparing game text against those literals. This fork
+  translates the plugin to English and replaces those hardcoded lookups with region-independent
+  game-data lookups by row id, so it runs correctly on the Global client.
+- **All original authorship is Anmi's.** This fork adds translation and client-compatibility work
+  only; the features and the research behind them are theirs.
+- Because no licence is stated, this fork is published on the understanding that it will be
+  **withdrawn on request** if the author objects. See the fork's `NOTICE.md`.
+
 ### Occult Helper — forked from OccultHelper by [OhKannaDuh](https://github.com/OhKannaDuh)
 
 - **Original project:** https://github.com/OhKannaDuh/OccultHelper (itself descended from
