@@ -34,6 +34,16 @@
       "project": "../PartyRecruitmentHelper/PartyRecruitmentHelper/PartyRecruitmentHelper.csproj"
     },
     {
+      "internalName": "BeastMasterHelper",
+      "project": "../BeastMasterHelper/BeastMasterHelper.csproj",
+      "$comment": "English fork of Anmi's Beastmaster. Upstream states NO licence, so redistribution terms are unstated - published with prominent attribution and withdrawn on request. See ../BeastMasterHelper/NOTICE.md.",
+      "fork": {
+        "upstream": "https://github.com/anmili2022/Beastmaster",
+        "author": "Anmi",
+        "license": "none stated"
+      }
+    },
+    {
       "internalName": "OccultHelper",
       "project": "../OccultHelper.v2/OccultHelper/OccultHelper.csproj",
       "license": "../OccultHelper.v2/LICENSE",
