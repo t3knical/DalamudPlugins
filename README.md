@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <img alt="Plugins" src="https://img.shields.io/badge/plugins-6-blue">
+  <img alt="Plugins" src="https://img.shields.io/badge/plugins-7-blue">
   <img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen">
   <img alt="License" src="https://img.shields.io/badge/license-see%20CREDITS-lightgrey">
 </p>
@@ -72,6 +72,49 @@ matches what the game reports.
 > **Requires** [vnavmesh](https://github.com/awgil/ffxiv_navmesh) and
 > [Lifestream](https://github.com/NightmareXIV/Lifestream) for navigation — both optional;
 > without them it still tracks everything, it just cannot walk you there.
+
+---
+
+## <img src="plugins/BossModRebornTekz/icon.png" width="34" alt=""> BossmodReborn (Tekz Fork)
+
+An unofficial fork of **BossMod Reborn** with extra work on top: custom AI-steered modules for the
+**Beastmaster / Crucible of the Unbroken** boards (First, Second and Third Board), tuned against
+recorded replays rather than reasoned from the game's own data alone, plus a set of **Occult Crescent**
+Critical Engagement and FATE modules kept independently of upstream's own versions. Renamed
+(`BossModRebornTekz`, distinct install and config folders) so it can never be confused with, or
+collide with, the real BossModReborn — install the original from
+[FFXIV-CombatReborn/BossmodReborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) if that's what
+you're after.
+
+### Recommended AI setup
+
+The Beastmaster boards are AI-piloted content, and BMR's AI needs a preset built for it to actually
+hold its own there. In BMR's **Autorotation presets** window, create a preset named **Beastmaster**
+with:
+
+- Automatic targeting
+- Automatic movement
+- Misc AI: goes to specified positional
+- Misc AI: stay within range of target
+
+Then in BMR's **AI config** section:
+
+- Set the **active preset** dropdown to `Beastmaster`
+- **Follow target**: on
+- **Follow during combat**: on
+- **Follow during active boss module**: on
+- **Manual targeting**: off
+- **Forbid actions**: off
+- **Max distance to target**: `2.6`
+- **Min distance**: `0.5`
+- **Preferred distance to forbidden zones**: `-10`
+- **Movement delay**: `0.05`
+
+> An unofficial fork of [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) by
+> **The Combat Reborn Team**, itself building on veyn's original BossMod. Redistributed under
+> BSD-3-Clause with the original notice intact; bugs in the fork's own module work are this fork's,
+> not the Combat Reborn Team's — report them at
+> [t3knical/BossmodReborn](https://github.com/t3knical/BossmodReborn).
 
 ---
 
