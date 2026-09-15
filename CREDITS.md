@@ -26,6 +26,28 @@ Written and maintained by **T3chnicalD3ath Inc.**:
 - Because no licence is stated, this fork is published on the understanding that it will be
   **withdrawn on request** if the author objects. See the fork's `NOTICE.md`.
 
+### BossmodReborn (Tekz Fork) — forked from BossMod Reborn by [The Combat Reborn Team](https://github.com/FFXIV-CombatReborn)
+
+- **Original project:** https://github.com/FFXIV-CombatReborn/BossmodReborn (itself a fork of
+  [`awgil/BossMod`](https://github.com/awgil/ffxiv_bossmod) by Andrew Gilewsky)
+- **Licence:** BSD 3-Clause — Copyright (c) 2022-2024, Andrew Gilewsky
+- **Full licence text:** [`licenses/BossModRebornTekz-LICENSE`](licenses/BossModRebornTekz-LICENSE)
+- **Why the fork exists:** additional boss-module work on the Occult Crescent critical engagements
+  and FATEs, and on the Beastmaster *Crucible of the Unbroken* boards, tuned against recorded
+  replays. It tracks upstream and merges their changes.
+- **This is not the official plugin.** It ships under the InternalName `BossModRebornTekz` and the
+  display name "BossmodReborn (Tekz Fork)" precisely so it cannot be mistaken for, or collide with,
+  the real one. Install upstream's build from the Combat Reborn Team's own repository if that is
+  what you want. Bugs in this build are the fork's, not theirs — report them here.
+
+The BSD 3-Clause licence permits redistribution in binary form provided the copyright notice and
+disclaimer travel with it, which `licenses/` satisfies. Its third clause forbids using the original
+authors' names to endorse derived works, which is why this build is named and described as an
+unofficial fork throughout. All credit for the base project belongs to Andrew Gilewsky and the
+Combat Reborn Team.
+
+---
+
 ### Occult Helper — forked from OccultHelper by [OhKannaDuh](https://github.com/OhKannaDuh)
 
 - **Original project:** https://github.com/OhKannaDuh/OccultHelper (itself descended from

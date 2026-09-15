@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Builds the configured plugins, copies their packaged zips into this repo, and
     regenerates repo.json (the plugin master list Dalamud reads).
@@ -91,7 +91,11 @@ function Test-ZipSafe {
             # Another plugin's manifest riding along is the same symptom
             if ($entry.Name -like '*.json' -and $entry.Name -notlike "$Name.json" `
                 -and $entry.Name -notlike '*.deps.json' -and $entry.FullName -eq $entry.Name) {
-                $looksLikeManifest = $entry.Name -notmatch '^(monsters|territories|packages\.lock)\.json$'
+                # Known data files that plugins legitimately ship alongside their manifest. Each one is
+                # named explicitly rather than allowing *.json through, so a stray manifest is still caught.
+                # BossModRebornTekz reads its two preset files from the assembly directory at runtime
+                # (Framework/Plugin.cs) - they are payload, not stale output.
+                $looksLikeManifest = $entry.Name -notmatch '^(monsters|territories|packages\.lock|DefaultRotationPresets|RebornPresets)\.json$'
                 if ($looksLikeManifest) {
                     $problems += "unexpected manifest $($entry.FullName) - stale build output?"
                 }

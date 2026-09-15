@@ -44,6 +44,17 @@
       }
     },
     {
+      "internalName": "BossModRebornTekz",
+      "project": "../BossmodReborn/BossMod/BossModReborn.csproj",
+      "license": "../BossmodReborn/LICENSE",
+      "$comment": "Fork of BossMod Reborn, itself a fork of veyn's BossMod. BSD-3-Clause, so redistribution is fine provided the notice travels and the original authors are not used to endorse this build - hence the renamed InternalName and the 'unofficial fork' wording in the manifest.",
+      "fork": {
+        "upstream": "https://github.com/FFXIV-CombatReborn/BossmodReborn",
+        "author": "The Combat Reborn Team",
+        "license": "BSD-3-Clause"
+      }
+    },
+    {
       "internalName": "OccultHelper",
       "project": "../OccultHelper.v2/OccultHelper/OccultHelper.csproj",
       "license": "../OccultHelper.v2/LICENSE",

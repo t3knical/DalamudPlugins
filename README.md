@@ -33,6 +33,7 @@ Then, in game:
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
 | <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Tracks Beastmaster quests and your beast catalogue | `/bmh` |
+| <img src="plugins/BossModRebornTekz/icon.png" width="46"> | **BossmodReborn (Tekz Fork)** | Unofficial fork of BossMod Reborn, with extra Occult Crescent and Beastmaster module work | `/bmr` |
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
 | <img src="plugins/OccultHelper/icon.png" width="46"> | **Occult Helper** | Automates Occult Crescent — treasure hunts, FATEs/CEs, Illegal Mode | `/och` |
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
