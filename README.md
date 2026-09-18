@@ -106,7 +106,7 @@ Then in BMR's **AI config** section:
 - **Manual targeting**: off
 - **Forbid actions**: off
 - **Max distance to target**: `2.6`
-- **Min distance**: `0.5`
+- **Min distance**: `-15`
 - **Preferred distance to forbidden zones**: `-10`
 - **Movement delay**: `0.05`
 
