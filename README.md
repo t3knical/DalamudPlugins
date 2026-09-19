@@ -92,7 +92,6 @@ The Beastmaster boards are AI-piloted content, and BMR's AI needs a preset built
 hold its own there. In BMR's **Autorotation presets** window, create a preset named **Beastmaster**
 with:
 
-- Automatic targeting
 - Automatic movement
 - Misc AI: goes to specified positional
 - Misc AI: stay within range of target
@@ -100,14 +99,18 @@ with:
 Then in BMR's **AI config** section:
 
 - Set the **active preset** dropdown to `Beastmaster`
+- **Forbid actions**: off
+- **Forbid movement**: off
+- **Idle while mounted**: off
 - **Follow target**: on
 - **Follow during combat**: on
 - **Follow during active boss module**: on
 - **Manual targeting**: off
-- **Forbid actions**: off
+- **Disable loading obstacle maps**: off
 - **Max distance to target**: `2.6`
+- **to slots**: `1`
 - **Min distance**: `-15`
-- **Preferred distance to forbidden zones**: `-10`
+- **Preferred distance to forbidden zones**: `0.05`
 - **Movement delay**: `0.05`
 
 > An unofficial fork of [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) by
