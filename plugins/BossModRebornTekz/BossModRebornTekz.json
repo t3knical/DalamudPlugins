@@ -2,7 +2,7 @@
     "Author":  "The Combat Reborn Team (fork maintained by t3knical)",
     "Name":  "BossmodReborn (Tekz Fork)",
     "InternalName":  "BossModRebornTekz",
-    "AssemblyVersion":  "1.0.22.0",
+    "AssemblyVersion":  "1.0.23.0",
     "Description":  "UNOFFICIAL FORK of BossMod Reborn by the Combat Reborn Team - install the original from their own repository if you want the real thing (https://github.com/FFXIV-CombatReborn/BossmodReborn).\n\nThis build tracks upstream and adds extra work on the Occult Crescent critical engagements and FATEs, and on the Beastmaster Crucible of the Unbroken boards, tuned against recorded replays. Bugs here are this fork\u0027s, not upstream\u0027s - report them at https://github.com/t3knical/BossmodReborn rather than to the Combat Reborn Team.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/BossmodReborn",
