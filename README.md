@@ -117,7 +117,7 @@ Then in BMR's **AI config** section:
 > **The Combat Reborn Team**, itself building on veyn's original BossMod. Redistributed under
 > BSD-3-Clause with the original notice intact; bugs in the fork's own module work are this fork's,
 > not the Combat Reborn Team's — report them at
-> [t3knical/BossmodReborn](https://github.com/t3knical/BossmodReborn).
+> [t3knical/DalamudPlugins](https://github.com/t3knical/DalamudPlugins).
 
 ---
 
