@@ -32,8 +32,8 @@ Then, in game:
 
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
-| <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Tracks Beastmaster quests and your beast catalogue | `/bmh` |
-| <img src="plugins/BossModRebornTekz/icon.png" width="46"> | **BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]** | Unofficial fork of BossMod Reborn, with extra Occult Crescent and Beastmaster module work | `/bmr` |
+| <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Beastmaster quests, catalogue, DPS rotation and Crucible of the Unbroken automation | `/bmh` |
+| <img src="plugins/BossModRebornTekz/icon.png" width="46"> | **BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]** | Unofficial fork of BossMod Reborn, with Crucible of the Unbroken and Occult Crescent module work | `/bmr` |
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
 | <img src="plugins/OccultHelper/icon.png" width="46"> | **Occult Helper** | Automates Occult Crescent — treasure hunts, FATEs/CEs, Illegal Mode | `/och` |
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
@@ -44,47 +44,105 @@ Then, in game:
 
 ## <img src="plugins/BeastMasterHelper/icon.png" width="34" alt=""> Beast Master Helper
 
-Tracks the Beastmaster job quest chain and your beast catalogue, and can walk you to
-whatever you still need.
+Everything Beastmaster in one plugin: the quest chain and beast catalogue, a DPS rotation
+that plays the job's kit, and full **Crucible of the Unbroken** automation - from queueing
+and picking a team to fighting each piece, looting, spending tokens and shopping.
 
 > **An English fork of [Beastmaster](https://github.com/anmili2022/Beastmaster) by
-> [Anmi](https://github.com/anmili2022).** All the original work is theirs — this fork
-> only translates it and makes it run on the Global client.
+> [Anmi](https://github.com/anmili2022).** The catalogue, quest tracking, capture and gauge
+> work are theirs - this fork translates it, makes it run on the Global client, and adds
+> the rotation and Crucible automation on top.
 
-**Catalogue.** All 50 beasts with attribute, location, level range and coordinates.
-Navigate to a spawn, or open the Duty Finder for the ones that live in dungeons.
+New here? The plugin ships a `walkthrough.md` that takes you from a fresh install to a running
+Crucible setup, including the BossMod side.
 
-**Quest chain.** Progress read from your client's own quest state, with navigation to the
-giver of anything unfinished.
+### Tracking
 
-**Auto-capture.** Optional, and only ever acts on a target you selected yourself —
-captures below a HP threshold you set, then runs the combo.
+- **Catalogue.** All 50 beasts with attribute, location, level range and coordinates. Navigate
+  to a spawn, or open the Duty Finder for the ones that live in dungeons.
+- **Quest chain.** Progress read from your client's own quest state, with navigation to the giver
+  of anything unfinished.
+- **Auto-capture.** Optional, and only ever acts on a target you selected yourself.
+- **Gauge readout.** Read-only view of Tenacity, Beast Power, Beast Heart and Beast Soul.
+- **Reads in your language.** Names are looked up from the client's own data by row id, so it
+  displays correctly whatever language you play in.
 
-**Gauge readout.** Read-only view of Tenacity, Beast Power, Beast Heart and Beast Soul,
-with a written guide to the cooperation gauge. It never writes to game memory.
+### Rotation
 
-**Reads in your language, not just English.** Upstream hardcoded Chinese creature, zone,
-duty and item names and then matched game text against them. This fork looks names up
-from the client's own data by row id instead, so it displays correctly whatever language
-you play in — and, unlike a plain translation, the capture and combo logic actually
-matches what the game reports.
+A priority-list rotation tuned toward maximum damage: the Instinct wheel with the right
+axe for the held Heart (including the Universality finisher), Rally and Rallying Cheer sequenced
+around banked stacks, Trick, Shield Charge as a gap closer, and cooldown-aware AoE. **Reset to
+recommended (max DPS)** puts every rotation setting back to the tuned values.
 
-> **Requires** [vnavmesh](https://github.com/awgil/ffxiv_navmesh) and
-> [Lifestream](https://github.com/NightmareXIV/Lifestream) for navigation — both optional;
-> without them it still tracks everything, it just cannot walk you there.
+- **Familiars.** Summons, Borrow and Tempered Release are handled per familiar; the cycle
+  dismisses each with Parting Blow so the next can come out.
+- **Kinship actions** (Beast Mode) each get their own rule: Quelling Wave at range only, Soul Crush
+  on interruptible casts, mitigation skins ahead of the matching damage, Scouring Ash on a cleansable
+  debuff. A Borrow lasts 60s, and the planner refreshes it before the next familiar swap.
+- **Snarl / Challenge.** Keep Covered for normal play; Suggested Team Mode runs its own smart
+  version (see below) and ignores that toggle.
+
+### Crucible of the Unbroken
+
+Runs the whole loop: enter, pick a team, prepare, fight, collect the Territory Tokens, spend them,
+and move to the next piece. It reads the Icy Veins guide as data.
+
+- **Suggested Team Mode.** The guide's team and strategy for every fight on all five boards.
+  Each fight has a plan: which familiar is Borrowed (Scouring Ash, Soul Crush, Quelling Wave or a
+  mitigation skin) and which are Tempered Released for damage; a named opener (Ghost first for
+  Flauros Piece, Ice Golem for Soul Crush, Karlabos or Gigantoad for Quelling Wave) that lands its
+  Borrow before the tank comes out; and a prompt handoff with Parting Blow.
+- **Smart Snarl / Challenge.** Damage is shared between you and the familiars rather than
+  ground out on one: a familiar covers while healthy, hands back at its share floor, covers you when
+  you are hurt or in an emergency, and you take tank busters yourself with the mitigation lent. A
+  utility familiar never covers you unless you are in real trouble. All thresholds are sliders.
+- **Fight-specific mechanics.** Drake Piece runs its Barbmole sequence (dispel Blaze Spikes with
+  Quelling Wave, wait for the moles to gather, Meteor, then Parting Blow) and its Morpho feed: the
+  familiar is put on Steady, Quelling Wave lowers each Morpho from range to under half health, and no
+  familiar is summoned until Abaddon has eaten them all.
+- **Board options.** Per-fight team and use overrides, with **Reset to dev-planned defaults**.
+- **Loot, tokens and shop.** Territory Tokens are collected reliably and spent on a planned shopping
+  list (the Beast Potion Kit is a high priority); items are used only in a live fight.
+- **Overlays.** Toggleable in the settings: the main overlay, the familiar overlay and a debug panel
+  showing what BossMod sees.
+
+### BossMod integration
+
+BMH talks to the Tekz fork of BossMod Reborn over IPC. **On a Crucible board it creates a
+`BeastMasterCrucible` movement preset, sets it as BossMod's AI preset and switches AI on when a module
+loads, then switches AI off again a few seconds after the module ends.** It only acts inside the Crucible
+territories and never turns off an AI you switched on yourself. Toggle: **Config -> Crucible ->
+Auto-configure BossMod movement** (on by default). Needs BossmodReborn (Tekz Fork) **1.0.64** or newer.
+
+> **Requires** BossmodReborn (Tekz Fork) for the Crucible automation.
+> [vnavmesh](https://github.com/awgil/ffxiv_navmesh) and
+> [Lifestream](https://github.com/NightmareXIV/Lifestream) are optional, for walking and cross-zone
+> travel; without them it still tracks everything, it just cannot walk you there.
 
 ---
 
 ## <img src="plugins/BossModRebornTekz/icon.png" width="34" alt=""> BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]
 
-An unofficial fork of **BossMod Reborn** with extra work on top: custom AI-steered modules for the
-**Beastmaster / Crucible of the Unbroken** boards (First, Second and Third Board), tuned against
-recorded replays rather than reasoned from the game's own data alone, plus a set of **Occult Crescent**
-Critical Engagement and FATE modules kept independently of upstream's own versions. Renamed
-(`BossModRebornTekz`, distinct install and config folders) so it can never be confused with, or
-collide with, the real BossModReborn — install the original from
+An unofficial fork of **BossMod Reborn** with extra work on top: AI-steered modules for the
+**Beastmaster / Crucible of the Unbroken** boards (First, Second and Third Board, including the Masters
+boards), tuned against recorded replays rather than reasoned from the game's own data alone, plus a set
+of **Occult Crescent** Critical Engagement and FATE modules kept independently of upstream's own
+versions. Renamed (`BossModRebornTekz`, distinct install and config folders) so it can never be confused
+with, or collide with, the real BossModReborn - install the original from
 [FFXIV-CombatReborn/BossmodReborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) if that's what
 you're after.
+
+**Why it matters for Beastmaster.** The Crucible pieces are scripted around your familiars, so the
+modules publish what Beast Master Helper needs over IPC: what to interrupt, dispel or cleanse, which
+enemies are forbidden to attack right now, when a tank buster or raidwide is coming, and a few
+fight-specific stages. For example, Drake Piece leaves the Barbmoles alone until Meteor has landed and
+holds the Drake's Blaze Spikes for a Quelling Wave dispel, and a Morpho counts as ready to feed to
+Abaddon at 50% health.
+
+**IPC for other plugins.** Besides presets and hints, it exposes AI status and control -
+`BossMod.AI.IsEnabled`, `AI.Enable(slot)` and `AI.Disable` - so a plugin can switch AI on for its own
+content without clobbering a state you set up by hand, and `Hints.DispelTargetID`, the enemy a module
+wants dispelled even when it is otherwise forbidden to attack.
 
 ### Recommended AI setup
 
@@ -104,7 +162,7 @@ BMR's **AI config** section:
 - **Preferred distance to forbidden zones**: `0.05`
 - **Movement delay**: `0.05`
 
-Note: Preset will now auto create/set itself and BMH should be able to turn on/off ai once in/out of a fight aswell  
+**The preset sets itself up.** Beast Master Helper creates the `BeastMasterCrucible` preset, makes it the AI preset and turns AI on for a Crucible fight and off again afterwards, so you don't need to build a preset by hand. The values above are for the AI config screen only.
 
 > An unofficial fork of [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) by
 > **The Combat Reborn Team**, itself building on veyn's original BossMod. Redistributed under
