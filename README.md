@@ -75,7 +75,7 @@ matches what the game reports.
 
 ---
 
-## <img src="plugins/BossModRebornTekz/icon.png" width="34" alt=""> BossmodReborn (Tekz Fork)
+## <img src="plugins/BossModRebornTekz/icon.png" width="34" alt=""> BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]
 
 An unofficial fork of **BossMod Reborn** with extra work on top: custom AI-steered modules for the
 **Beastmaster / Crucible of the Unbroken** boards (First, Second and Third Board), tuned against
