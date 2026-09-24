@@ -102,14 +102,14 @@ Then in BMR's **AI config** section:
 - **Forbid actions**: off
 - **Forbid movement**: off
 - **Idle while mounted**: off
-- **Follow target**: on
-- **Follow during combat**: on
-- **Follow during active boss module**: on
+- **Follow target**: off
+- **Follow during combat**: off
+- **Follow during active boss module**: off
 - **Manual targeting**: off
 - **Disable loading obstacle maps**: off
 - **Max distance to target**: `2.6`
 - **to slots**: `1`
-- **Min distance**: `-15`
+- **Min distance**: `-10`
 - **Preferred distance to forbidden zones**: `0.05`
 - **Movement delay**: `0.05`
 
