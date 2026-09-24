@@ -98,7 +98,6 @@ with:
 
 Then in BMR's **AI config** section:
 
-- Set the **active preset** dropdown to `Beastmaster`
 - **Forbid actions**: off
 - **Forbid movement**: off
 - **Idle while mounted**: off
