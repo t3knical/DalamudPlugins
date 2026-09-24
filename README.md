@@ -88,15 +88,7 @@ you're after.
 
 ### Recommended AI setup
 
-The Beastmaster boards are AI-piloted content, and BMR's AI needs a preset built for it to actually
-hold its own there. In BMR's **Autorotation presets** window, create a preset named **Beastmaster**
-with:
-
-- Automatic movement
-- Misc AI: goes to specified positional
-- Misc AI: stay within range of target
-
-Then in BMR's **AI config** section:
+BMR's **AI config** section:
 
 - **Forbid actions**: off
 - **Forbid movement**: off
@@ -111,6 +103,8 @@ Then in BMR's **AI config** section:
 - **Min distance**: `-10`
 - **Preferred distance to forbidden zones**: `0.05`
 - **Movement delay**: `0.05`
+
+Note: Preset will now auto create/set itself and BMH should be able to turn on/off ai once in/out of a fight aswell  
 
 > An unofficial fork of [BossMod Reborn](https://github.com/FFXIV-CombatReborn/BossmodReborn) by
 > **The Combat Reborn Team**, itself building on veyn's original BossMod. Redistributed under
