@@ -3,7 +3,7 @@
         "Author":  "T3chnicalD3ath Inc.",
         "Name":  "Reaction Helper",
         "InternalName":  "ReactionHelper",
-        "AssemblyVersion":  "0.10.0.0",
+        "AssemblyVersion":  "0.10.1.0",
         "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
         "ApplicableVersion":  "any",
         "Tags":  [
@@ -24,10 +24,10 @@
         "IsHide":  false,
         "IsTestingExclusive":  false,
         "DownloadCount":  0,
-        "LastUpdate":  1790443337,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.0.0/ReactionHelper.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.0.0/ReactionHelper.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.0.0/ReactionHelper.zip",
+        "LastUpdate":  1790443496,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.1.0/ReactionHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.1.0/ReactionHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.1.0/ReactionHelper.zip",
         "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
     },
