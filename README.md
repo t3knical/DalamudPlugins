@@ -115,6 +115,15 @@ loads, then switches AI off again a few seconds after the module ends.** It only
 territories and never turns off an AI you switched on yourself. Toggle: **Config -> Crucible ->
 Auto-configure BossMod movement** (on by default). Needs BossmodReborn (Tekz Fork) **1.0.64** or newer.
 
+### Reaction Helper - worth grabbing for the Crucible
+
+**[Reaction Helper](#reaction-helper)** (`/rhr`, in this repo) runs Crucible fights from timelines and profiles: it places the
+opener summon and Borrow, holds or overrides BMH's toggles at the right moment, picks targets in BossMod's order, gap-closes to
+adds, and does the Drake's Morpho feed, the Flauros Ghost opener and the Gigantis Soul Crush interrupt - falling back to other
+familiars of the same kind when your team is not the guide's. **For the Crucible fights it covers, BMH plays them properly only
+with it.** Install it, then tick **Let Reaction Helper run this fight** in BMH's board options for a fight so BMH stops planning
+it itself. Needs Beast Master Helper 0.9.78 or newer.
+
 > **Requires** BossmodReborn (Tekz Fork) for the Crucible automation.
 > [vnavmesh](https://github.com/awgil/ffxiv_navmesh) and
 > [Lifestream](https://github.com/NightmareXIV/Lifestream) are optional, for walking and cross-zone
