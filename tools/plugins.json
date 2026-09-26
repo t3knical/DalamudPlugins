@@ -71,7 +71,14 @@
     },
     {
       "internalName": "ReactionHelper",
-      "project": "../ReactionHelper/ReactionHelper.csproj"
+      "project": "../ReactionHelper/ReactionHelper.csproj",
+      "$comment": "Ships the Crucible timelines and Beastmaster profiles in Bundled/; the plugin copies them into its config folder on startup (never over a file the user edited).",
+      "payload": [
+        {
+          "source": "../ReactionHelper/Bundled",
+          "target": "Bundled"
+        }
+      ]
     }
   ]
 }

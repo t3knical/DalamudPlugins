@@ -410,6 +410,8 @@ to it from Beast Master Helper's board options.
 **Profiles.** Timeline profiles belong to one fight and load on zone-in; general profiles run for the jobs you tick.
 Right-click anything to copy, paste (folders too), rename or delete it, and *Test Now* runs a reaction on the spot.
 
+**Ships with the Crucible.** The recorded timelines for the Crucible fights we have covered (First Board through Second Master's Board) and the Beastmaster profile for each - openers, Borrow, Meteor, targeting, gap closes - are bundled and installed on first launch. A profile or timeline you have edited is never overwritten by an update; delete it to get the shipped copy back.
+
 > Beastmaster features need Beast Master Helper 0.9.78 or newer.
 
 ---
