@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Reaction Helper",
     "InternalName":  "ReactionHelper",
-    "AssemblyVersion":  "0.10.2.0",
+    "AssemblyVersion":  "0.10.3.0",
     "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
     "ApplicableVersion":  "any",
     "Tags":  [
