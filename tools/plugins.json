@@ -25,7 +25,12 @@
         {
           "source": "../Party Monitor/TempScraper/bin/Release/net10.0",
           "target": "TempScraper",
-          "exclude": [ "*.pdb", "*.log", "*debug*", "*_rendered.html" ]
+          "exclude": [
+            "*.pdb",
+            "*.log",
+            "*debug*",
+            "*_rendered.html"
+          ]
         }
       ]
     },
@@ -63,6 +68,10 @@
         "author": "OhKannaDuh",
         "license": "AGPL-3.0"
       }
+    },
+    {
+      "internalName": "ReactionHelper",
+      "project": "../ReactionHelper/ReactionHelper.csproj"
     }
   ]
 }

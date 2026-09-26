@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <img alt="Plugins" src="https://img.shields.io/badge/plugins-7-blue">
+  <img alt="Plugins" src="https://img.shields.io/badge/plugins-8-blue">
   <img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen">
   <img alt="License" src="https://img.shields.io/badge/license-see%20CREDITS-lightgrey">
 </p>
@@ -39,6 +39,7 @@ Then, in game:
 | <img src="plugins/PartyMonitor/icon.png" width="46"> | **Party Monitor** | Watches party changes, relays them to Discord | `/pm` |
 | <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/prh` |
 | <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/pwr` |
+| <img src="plugins/ReactionHelper/icon.png" width="46"> | **Reaction Helper** | Fight timelines and per-job reactions that drive your rotation plugins - toggles, skills, targeting, summons | `/rhr` |
 
 ---
 
@@ -368,6 +369,39 @@ the ping display stays empty.
 >
 > **Playing on Windows? Install the official PingPlugin instead** — it is maintained by
 > its author and stays more current than this fork.
+
+---
+
+## <img src="plugins/ReactionHelper/icon.png" width="34" alt=""> Reaction Helper
+
+A TensorReactions-style reaction engine: load a **fight timeline**, hang **reactions** on its mechanics, and let
+it press skills, flip your rotation plugin's toggles, pick targets and place summons at the right moment.
+Open it with `/rhr`.
+
+**Timelines.** Loads [cactbot](https://github.com/quisquous/cactbot) timelines (the *Get Timelines* button
+downloads them), syncs to the fight from the game's own messages, and shows a coming-up list and overlay. Every
+pull is **recorded**; pick pulls in the Replays tab and *Build Timeline* to make a clean timeline from what actually
+happened - the boss (not the last add), adds as named waves, repeats collapsed, `[------ START ------]` and
+`[------ END ------]` markers, and A/B lines where different pulls diverged.
+
+**Reactions.** Each reaction has a window around a mechanic, **conditions** (you, your target, your party, enemies
+present, a status, an action's charges, the familiars on your Battlehorns, the kinship lent...) and **actions**:
+
+- press a skill (by name or ID, on your target, on yourself or on a named enemy) with or without the weave window,
+- flip, hold or temporarily override a toggle of a loaded rotation plugin, queue a hotbar action, send a pet command,
+- target an enemy by priority (name IDs, skip shielded ones, limit by HP), clear the target,
+- show an alert, run a command, set a variable.
+
+It works with **Beast Master Helper** (and MachinistHelper, when installed) over IPC (any
+plugin that implements the same small contract can be driven), and reads
+BossMod Reborn's hints when it is loaded. For Beastmaster it can run a whole
+Crucible fight plan - opener summon, Borrow, Meteor, the Drake's Morpho feed, gap closes to adds - as reactions; hand a fight
+to it from Beast Master Helper's board options.
+
+**Profiles.** Timeline profiles belong to one fight and load on zone-in; general profiles run for the jobs you tick.
+Right-click anything to copy, paste (folders too), rename or delete it, and *Test Now* runs a reaction on the spot.
+
+> Beastmaster features need Beast Master Helper 0.9.78 or newer.
 
 ---
 

@@ -1,5 +1,37 @@
 [
     {
+        "Author":  "T3chnicalD3ath Inc.",
+        "Name":  "Reaction Helper",
+        "InternalName":  "ReactionHelper",
+        "AssemblyVersion":  "0.7.0.0",
+        "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
+        "ApplicableVersion":  "any",
+        "Tags":  [
+                     "reactions",
+                     "timeline",
+                     "rotation"
+                 ],
+        "CategoryTags":  [
+                             "Jobs"
+                         ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Timeline and job reactions that drive your rotation plugins.",
+        "AcceptsFeedback":  true,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  0,
+        "LastUpdate":  1790432760,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.7.0.0/ReactionHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.7.0.0/ReactionHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.7.0.0/ReactionHelper.zip",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
+    },
+    {
         "Author":  "Anmi (fork maintained by T3chnicalD3ath Inc.)",
         "Name":  "Beast Master Helper",
         "InternalName":  "BeastMasterHelper",
