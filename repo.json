@@ -1,6 +1,38 @@
 [
     {
         "Author":  "T3chnicalD3ath Inc.",
+        "Name":  "Reaction Helper",
+        "InternalName":  "ReactionHelper",
+        "AssemblyVersion":  "0.10.17.0",
+        "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
+        "ApplicableVersion":  "any",
+        "Tags":  [
+                     "reactions",
+                     "timeline",
+                     "rotation"
+                 ],
+        "CategoryTags":  [
+                             "Jobs"
+                         ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Timeline and job reactions that drive your rotation plugins.",
+        "AcceptsFeedback":  true,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  4,
+        "LastUpdate":  1790513501,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.17.0/ReactionHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.17.0/ReactionHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.17.0/ReactionHelper.zip",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
+    },
+    {
+        "Author":  "T3chnicalD3ath Inc.",
         "Name":  "Party Monitor",
         "InternalName":  "PartyMonitor",
         "AssemblyVersion":  "1.1.6.0",
@@ -27,38 +59,6 @@
         "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.1.6.0/PartyMonitor.zip",
         "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/PartyMonitor-v1.1.6.0/PartyMonitor.zip",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/PartyMonitor/icon.png"
-    },
-    {
-        "Author":  "T3chnicalD3ath Inc.",
-        "Name":  "Reaction Helper",
-        "InternalName":  "ReactionHelper",
-        "AssemblyVersion":  "0.10.16.0",
-        "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
-        "ApplicableVersion":  "any",
-        "Tags":  [
-                     "reactions",
-                     "timeline",
-                     "rotation"
-                 ],
-        "CategoryTags":  [
-                             "Jobs"
-                         ],
-        "DalamudApiLevel":  15,
-        "LoadRequiredState":  0,
-        "LoadSync":  false,
-        "CanUnloadAsync":  false,
-        "LoadPriority":  0,
-        "Punchline":  "Timeline and job reactions that drive your rotation plugins.",
-        "AcceptsFeedback":  true,
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  4,
-        "LastUpdate":  1790511687,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.16.0/ReactionHelper.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.16.0/ReactionHelper.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.16.0/ReactionHelper.zip",
-        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
-        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
     },
     {
         "Author":  "Anmi (fork maintained by T3chnicalD3ath Inc.)",
