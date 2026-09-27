@@ -1,0 +1,23 @@
+{
+  "Author": "T3chnicalD3ath Inc.",
+  "Name": "Machinist Helper",
+  "InternalName": "MachinistHelper",
+  "AssemblyVersion": "0.1.0.0",
+  "Description": "A priority-list Machinist rotation with an on-screen toggle panel: cooldown, AoE, Hypercharge, Reassemble, each tool, Wildfire, Queen, potion and more can be switched on and off in combat.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "machinist",
+    "mch",
+    "rotation"
+  ],
+  "CategoryTags": [
+    "Jobs"
+  ],
+  "DalamudApiLevel": 15,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false,
+  "LoadPriority": 0,
+  "Punchline": "Machinist rotation with a toggle panel, aimed at maximum damage.",
+  "AcceptsFeedback": true
+}
