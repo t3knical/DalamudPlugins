@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Tekz Bard Helper",
     "InternalName":  "TekzBardHelper",
-    "AssemblyVersion":  "0.12.11.0",
+    "AssemblyVersion":  "0.12.11.1",
     "Description":  "Play MIDI files on any instrument (playlist, track on/off and transpose, speed, ensemble start), and run a band: the party leader clicks Host and posts an invite, members press Join, and the leader can then play songs for everyone, switch the whole band - or one member - to any instrument, hand out which member plays which track, send a song file to anyone who lacks it, and stand the band in a ready-made shape for 3, 4, 6 or 8 players - or one you draw yourself - and turn them to face the right way.\n\nSecurity: the leader\u0027s plugin hosts the connection directly - no outside server. Joining needs the invite\u0027s secret code, the host only admits people in its party, and members only obey commands while the host is their current party leader. Moving a member\u0027s character is off unless that member turns it on. All traffic is encrypted.\n\nHosting needs members to reach the leader\u0027s PC: same network works out of the box; across the internet, forward the shown port. Formations use the vnavmesh plugin.\n\nUse /tbh to open it.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
