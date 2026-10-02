@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Tekz Bard Helper",
     "InternalName":  "TekzBardHelper",
-    "AssemblyVersion":  "0.2.0.0",
+    "AssemblyVersion":  "0.2.1.0",
     "Description":  "Coordinate a party of bards. The party leader clicks Host and shares a one-line invite; members paste it in to join. The leader can then switch the whole band - or one member - to any instrument, and sees who is connected, what they hold and whether the switch landed.\n\nSecurity: the leader\u0027s plugin hosts the connection directly - no outside server. Joining needs the invite\u0027s secret code, the host only admits people in its party, and members only obey commands while the host is their current party leader. All traffic is encrypted.\n\nHosting needs the members to reach the leader\u0027s PC: same network works out of the box; across the internet, forward the shown port on the leader\u0027s router.\n\nUse /tbh to open it.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
