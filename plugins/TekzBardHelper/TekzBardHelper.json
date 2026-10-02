@@ -1,0 +1,21 @@
+{
+  "Author": "Tekz",
+  "Name": "Tekz Bard Helper",
+  "InternalName": "TekzBardHelper",
+  "AssemblyVersion": "0.1.0.0",
+  "Description": "Local prototype for party-leader instrument coordination. Use /tbh to open the control panel.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "bard",
+    "performance",
+    "party",
+    "music"
+  ],
+  "DalamudApiLevel": 15,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false,
+  "LoadPriority": 0,
+  "Punchline": "Direct band coordination for party bards.",
+  "AcceptsFeedback": true
+}
