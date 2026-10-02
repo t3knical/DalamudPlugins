@@ -1,21 +1,27 @@
-{
-  "Author": "Tekz",
-  "Name": "Tekz Bard Helper",
-  "InternalName": "TekzBardHelper",
-  "AssemblyVersion": "0.1.0.0",
-  "Description": "Local prototype for party-leader instrument coordination. Use /tbh to open the control panel.",
-  "ApplicableVersion": "any",
-  "Tags": [
-    "bard",
-    "performance",
-    "party",
-    "music"
-  ],
-  "DalamudApiLevel": 15,
-  "LoadRequiredState": 0,
-  "LoadSync": false,
-  "CanUnloadAsync": false,
-  "LoadPriority": 0,
-  "Punchline": "Direct band coordination for party bards.",
-  "AcceptsFeedback": true
+﻿{
+    "Author":  "T3chnicalD3ath Inc.",
+    "Name":  "Tekz Bard Helper",
+    "InternalName":  "TekzBardHelper",
+    "AssemblyVersion":  "0.2.0.0",
+    "Description":  "Coordinate a party of bards. The party leader clicks Host and shares a one-line invite; members paste it in to join. The leader can then switch the whole band - or one member - to any instrument, and sees who is connected, what they hold and whether the switch landed.\n\nSecurity: the leader\u0027s plugin hosts the connection directly - no outside server. Joining needs the invite\u0027s secret code, the host only admits people in its party, and members only obey commands while the host is their current party leader. All traffic is encrypted.\n\nHosting needs the members to reach the leader\u0027s PC: same network works out of the box; across the internet, forward the shown port on the leader\u0027s router.\n\nUse /tbh to open it.",
+    "ApplicableVersion":  "any",
+    "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+    "Tags":  [
+                 "bard",
+                 "performance",
+                 "party",
+                 "music",
+                 "ensemble"
+             ],
+    "CategoryTags":  [
+                         "Social"
+                     ],
+    "DalamudApiLevel":  15,
+    "LoadRequiredState":  0,
+    "LoadSync":  false,
+    "CanUnloadAsync":  false,
+    "LoadPriority":  0,
+    "Punchline":  "Run your party\u0027s band: the leader picks everyone\u0027s instrument from one panel.",
+    "AcceptsFeedback":  false,
+    "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/TekzBardHelper/icon.png"
 }
