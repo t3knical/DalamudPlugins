@@ -3,7 +3,7 @@
 A third-party plugin repository for **[Dalamud](https://github.com/goatcorp/Dalamud)** (FINAL FANTASY XIV / XIVLauncher).
 
 <p align="center">
-  <img alt="Plugins" src="https://img.shields.io/badge/plugins-8-blue">
+  <img alt="Plugins" src="https://img.shields.io/badge/plugins-9-blue">
   <img alt="API" src="https://img.shields.io/badge/Dalamud%20API-15-brightgreen">
   <img alt="License" src="https://img.shields.io/badge/license-see%20CREDITS-lightgrey">
 </p>
@@ -32,6 +32,7 @@ Then, in game:
 
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
+| <img src="plugins/TekzBardHelper/icon.png" width="46"> | **Bard Performance Helper** | MIDI player and band manager for bards: play, sync your party, run the ensemble | `/bph` |
 | <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Beastmaster quests, catalogue, DPS rotation and Crucible of the Unbroken automation | `/bmh` |
 | <img src="plugins/BossModRebornTekz/icon.png" width="46"> | **BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]** | Unofficial fork of BossMod Reborn, with Crucible of the Unbroken and Occult Crescent module work | `/bmr` |
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
@@ -40,6 +41,59 @@ Then, in game:
 | <img src="plugins/PartyRecruitmentHelper/icon.png" width="46"> | **Party Recruitment Helper** | Saves and re-applies Party Finder slot layouts | `/prh` |
 | <img src="plugins/PingWatcher/icon.png" width="46"> | **PingWatcher** | Latency display that works on Linux/Wine | `/pwr` |
 | <img src="plugins/ReactionHelper/icon.png" width="46"> | **Reaction Helper** | Fight timelines and per-job reactions that drive your rotation plugins - toggles, skills, targeting, summons | `/rhr` |
+
+---
+
+## <img src="plugins/TekzBardHelper/icon.png" width="34" alt=""> Bard Performance Helper
+
+A MIDI player and a band manager in one plugin. Play your own songs on any performance
+instrument, or lead your party as a band where everyone plays in time.
+
+### Play
+
+- **Playlist and player.** Search and sort your songs, give them clean display names without
+  renaming the files, and turn each track on or off, transpose it or change its instrument.
+  Change the speed, or let the next song follow automatically.
+- **Instrument handling.** The right instrument is equipped when a song loads, and you can put
+  it away with one click.
+
+### Lead a band
+
+- **Host and join.** The party leader hosts and members join, manually or automatically.
+- **Leader controls.** The leader plays songs for everyone, swaps instruments for one member or
+  all, and assigns tracks to members, automatically if you like.
+- **Songs sent to members.** The leader sends each song to members directly, so **they don't
+  need any MIDI files**.
+- **Ensemble start.** Use the game's own ensemble start, or the plugin's synchronized start with
+  clock matching and optional latency compensation.
+
+### Formations
+
+Ready-made shapes for 2 to 8 players, a drawing editor for your own, per-spot member choices
+that are remembered, and **Members follow me** to keep everyone in position as you move. Needs
+vnavmesh.
+
+### Extras
+
+- **Compact overlay.** Collapsible groups, a filterable playlist, one-click ensemble and
+  formation buttons, emotes for the whole band or just you, and your choice of fonts and sizes.
+- **Member extras.** Per-member camera and render tweaks, auto-accept for party invites and
+  teleports from characters you list, a window title that shows who each client is, and restart
+  or close for member clients.
+
+### Security and who to trust
+
+- **Direct connection, no outside server.** The leader's plugin hosts the connection itself and
+  all traffic is encrypted. Joining needs the invite's secret code, and members obey commands
+  only while the host is their current party leader. The invite posted in party chat is
+  encrypted too, so the address and code never appear as readable text in the chat log.
+- **Only join people you know and trust completely.** Because the connection is direct, the
+  host's and members' IP addresses are visible to each other. Even if the plugin hid them, any
+  network monitoring tool or a simple command-line check would reveal them.
+- **You stay in control.** Anything that moves your character, changes your camera or render
+  settings, or closes or restarts your game is off unless you turn it on.
+
+Open it with `/bph`.
 
 ---
 
