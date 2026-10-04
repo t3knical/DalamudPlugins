@@ -46,34 +46,32 @@ Then, in game:
 
 ## <img src="plugins/TekzBardHelper/icon.png" width="34" alt=""> Bard Performance Helper
 
-**Android remote:** [Download BPH Remote APK](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.0.0/BPH-Remote.apk) (Android 8.0+; plugin v0.16.0.0+).
-In the PC plugin open **/bph → Settings → Phone remote → Start phone remote**.
-Enter the PC's IP, phone port (default **47821**) and pairing key in the app, then compare
-the host fingerprint before approving. Use the same Wi-Fi/LAN or a VPN reaching the PC;
-allow the phone port through Windows Firewall if necessary. The phone controls the PC's
-playlist, playback, hosting, members, ensembles, formations, instruments and emotes.
-The existing band connection uses its own port (default 47820). The PC remains the host.
-
 A MIDI player and a band manager in one plugin. Play your own songs on any performance
-instrument, or lead your party as a band where everyone plays in time.
+instrument, or lead your party as a band where everyone plays in time - and run it all from
+your phone if you like.
 
 ### Play
 
-- **Playlist and player.** Search and sort your songs, give them clean display names without
-  renaming the files, and turn each track on or off, transpose it or change its instrument.
-  Change the speed, or let the next song follow automatically.
+- **Playlist and player.** Search and sort your songs, turn each track on or off, transpose it or
+  change its instrument, change the speed, and choose whether the next song follows by itself.
+- **Groups and names.** Organise the playlist into main groups and subgroups (rename, fold,
+  move), and give any song a clean display name without renaming the file.
+- **Tidy.** If a song file is deleted from disk the plugin offers to remove it from the
+  playlist. It can also say "Now playing: ..." in chat when a song starts.
 - **Instrument handling.** The right instrument is equipped when a song loads, and you can put
   it away with one click.
 
 ### Lead a band
 
-- **Host and join.** The party leader hosts and members join, manually or automatically.
+- **Host and join.** The party leader hosts and members join, manually or automatically; joins
+  and the leader's commands are spaced out so nobody gets left behind.
 - **Leader controls.** The leader plays songs for everyone, swaps instruments for one member or
   all, and assigns tracks to members, automatically if you like.
 - **Songs sent to members.** The leader sends each song to members directly, so **they don't
-  need any MIDI files**.
+  need any MIDI files**. If a member is slow to load it, the leader's plugin sends it again.
 - **Ensemble start.** Use the game's own ensemble start, or the plugin's synchronized start with
-  clock matching and optional latency compensation.
+  clock matching and optional latency compensation. The start waits until every member has the
+  song and their instrument ready.
 
 ### Formations
 
@@ -85,9 +83,30 @@ vnavmesh.
 
 - **Compact overlay.** Collapsible groups, a filterable playlist, one-click ensemble and
   formation buttons, emotes for the whole band or just you, and your choice of fonts and sizes.
-- **Member extras.** Per-member camera and render tweaks, auto-accept for party invites and
-  teleports from characters you list, a window title that shows who each client is, and restart
-  or close for member clients.
+- **Member extras.** Per-member camera and render tweaks (remembered for each character),
+  auto-accept for party invites and teleports from characters you list, a window title that shows
+  who each client is, and restart or close for member clients.
+
+### Android remote
+
+Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.5.2/BPH-Remote.apk)**
+(Android 8.0+; the newest Bard Performance Helper release always carries the newest app).
+
+- **Everything you need from the couch.** A pinned now-playing bar with transport and a one-tap
+  ensemble start/stop, a line that tells you whether every member has the song and their
+  instrument, the grouped playlist (tap a song to load it), hosting and members, formations
+  and follow, instruments for the whole band or one member, and emotes - in collapsible
+  sections like the overlay.
+- **Listen on this phone.** Hear the whole song, every track, on the phone, lined up with the
+  game; a delay setting from -1 s to +10 s lets you match the game's audio (Bluetooth headsets
+  need more). It plays a simple built-in tone, not the game's instruments, and the MIDI file
+  never leaves the PC.
+- **Pairing.** In the PC plugin open **/bph -> Settings -> Phone remote -> Start phone remote**.
+  Enter the PC's IP, the phone port (default 47821) and the six-digit PIN it shows (it changes
+  every minute and after every use). After the first pairing the phone does not need the PIN
+  again; "Forget paired phones" on the PC undoes that.
+- **Same network.** Use the same Wi-Fi/LAN or a VPN that reaches the PC, and allow the phone
+  port through the firewall if needed. The ensemble members connect on a separate port.
 
 ### Security and who to trust
 
@@ -100,6 +119,10 @@ vnavmesh.
   network monitoring tool or a simple command-line check would reveal them.
 - **You stay in control.** Anything that moves your character, changes your camera or render
   settings, or closes or restarts your game is off unless you turn it on.
+- **The phone remote.** It uses an encrypted connection with a certificate your phone checks.
+  On a system that cannot create that certificate (some Linux/Wine setups) it falls back to an
+  unencrypted connection, says so clearly, and asks you to confirm in the app - use that only on
+  your own LAN or VPN, never on public Wi-Fi.
 
 Open it with `/bph`.
 
