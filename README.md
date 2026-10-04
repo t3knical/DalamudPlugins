@@ -46,6 +46,14 @@ Then, in game:
 
 ## <img src="plugins/TekzBardHelper/icon.png" width="34" alt=""> Bard Performance Helper
 
+**Android remote:** [Download BPH Remote APK](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.0.0/BPH-Remote.apk) (Android 8.0+; plugin v0.16.0.0+).
+In the PC plugin open **/bph → Settings → Phone remote → Start phone remote**.
+Enter the PC's IP, phone port (default **47821**) and pairing key in the app, then compare
+the host fingerprint before approving. Use the same Wi-Fi/LAN or a VPN reaching the PC;
+allow the phone port through Windows Firewall if necessary. The phone controls the PC's
+playlist, playback, hosting, members, ensembles, formations, instruments and emotes.
+The existing band connection uses its own port (default 47820). The PC remains the host.
+
 A MIDI player and a band manager in one plugin. Play your own songs on any performance
 instrument, or lead your party as a band where everyone plays in time.
 
