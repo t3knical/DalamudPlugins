@@ -89,7 +89,7 @@ vnavmesh.
 
 ### Android remote
 
-Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.6.0/BPH-Remote.apk)**
+Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.7.0/BPH-Remote.apk)**
 (Android 8.0+; the newest Bard Performance Helper release always carries the newest app).
 
 - **Everything you need from the couch.** A pinned now-playing bar with transport and a one-tap
