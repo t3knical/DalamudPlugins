@@ -32,7 +32,7 @@ Then, in game:
 
 | | Plugin | What it does | Command |
 |:--:|---|---|---|
-| <img src="plugins/TekzBardHelper/icon.png" width="46"> | **Bard Performance Helper** | MIDI player and band manager for bards: play, sync your party, run the ensemble | `/bph` |
+| <img src="plugins/BardPerformanceHelper/icon.png" width="46"> | **Bard Performance Helper** | MIDI player and band manager for bards: play, sync your party, run the ensemble | `/bph` |
 | <img src="plugins/BeastMasterHelper/icon.png" width="46"> | **Beast Master Helper** | Beastmaster quests, catalogue, DPS rotation and Crucible of the Unbroken automation | `/bmh` |
 | <img src="plugins/BossModRebornTekz/icon.png" width="46"> | **BossmodReborn (Tekz Fork) [Would Recommend Only For Suggested Team Mode]** | Unofficial fork of BossMod Reborn, with Crucible of the Unbroken and Occult Crescent module work | `/bmr` |
 | <img src="plugins/HunterV2/icon.png" width="46"> | **Hunter** | Farms mob-drop items automatically, end to end | `/htr` |
@@ -44,7 +44,7 @@ Then, in game:
 
 ---
 
-## <img src="plugins/TekzBardHelper/icon.png" width="34" alt=""> Bard Performance Helper
+## <img src="plugins/BardPerformanceHelper/icon.png" width="34" alt=""> Bard Performance Helper
 
 A MIDI player and a band manager in one plugin. Play your own songs on any performance
 instrument, or lead your party as a band where everyone plays in time - and run it all from
@@ -89,7 +89,7 @@ vnavmesh.
 
 ### Android remote
 
-Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/TekzBardHelper-v0.16.7.0/BPH-Remote.apk)**
+Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.17.0.0/BPH-Remote.apk)**
 (Android 8.0+; the newest Bard Performance Helper release always carries the newest app).
 
 - **Everything you need from the couch.** A pinned now-playing bar with transport and a one-tap

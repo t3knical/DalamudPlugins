@@ -4,8 +4,8 @@
   "repoUrl": "https://github.com/t3knical/DalamudPlugins",
   "plugins": [
     {
-      "internalName": "TekzBardHelper",
-      "project": "../Tekz Bard Helper/TekzBardHelper.csproj"
+      "internalName": "BardPerformanceHelper",
+      "project": "../Tekz Bard Helper/BardPerformanceHelper.csproj"
     },
     {
       "internalName": "HunterV2",
