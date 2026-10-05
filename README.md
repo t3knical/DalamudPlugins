@@ -57,7 +57,9 @@ your phone if you like.
 - **Groups and names.** Organise the playlist into main groups and subgroups (rename, fold,
   move), and give any song a clean display name without renaming the file.
 - **Tidy.** If a song file is deleted from disk the plugin offers to remove it from the
-  playlist. It can also say "Now playing: ..." in chat when a song starts.
+  playlist. Songs that are in the playlist twice (identical files, or copies like "Song (1)") are
+  found and shown with their group and file name - keep the one you want. Import a whole folder
+  and it becomes a group, with a subgroup for each subfolder. It can also say "Now playing: ..." in chat when a song starts.
 - **Instrument handling.** The right instrument is equipped when a song loads, and you can put
   it away with one click.
 
