@@ -99,8 +99,8 @@ Control the PC from your phone: **[Download BPH Remote](https://github.com/t3kni
   sections like the overlay.
 - **Listen on this phone.** Hear the whole song, every track, on the phone, lined up with the
   game; a delay setting from -1 s to +10 s lets you match the game's audio (Bluetooth headsets
-  need more). Choose a SoundFont (.sf2) on the phone and every track plays with its own game
-  instrument; without one it plays a simple tone. The MIDI file never leaves the PC. The app stays
+  need more). The app carries two game SoundFonts, so every track plays with its own game
+  instrument right away (you can also load your own .sf2). The MIDI file never leaves the PC. The app stays
   connected (and keeps playing) while it is in the background.
 - **Pairing.** In the PC plugin open **/bph -> Settings -> Phone remote -> Start phone remote**.
   Enter the PC's IP, the phone port (default 47821) and the six-digit PIN it shows (it changes
