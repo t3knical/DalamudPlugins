@@ -111,6 +111,15 @@ Control the PC from your phone: **[Download BPH Remote](https://github.com/t3kni
 - **Same network.** Use the same Wi-Fi/LAN or a VPN that reaches the PC, and allow the phone
   port through the firewall if needed. The ensemble members connect on a separate port.
 
+### Windows console
+
+Control the host from another Windows computer: **[Download BPH Console](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.17.4.0/BPH-Console.exe)**
+(one file, nothing to install; Windows may warn because it is not signed). It connects the same
+way the phone does, then shows the whole band at once: every player's instrument and whether
+they have the song and are ready, the playlist, transport and ensemble start, who plays which
+track (click to hand tracks out, or auto-assign), formations, emotes and an activity log.
+Needs plugin 0.17.4.0 or newer for the track panel.
+
 ### Security and who to trust
 
 - **Direct connection, no outside server.** The leader's plugin hosts the connection itself and
