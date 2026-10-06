@@ -94,7 +94,7 @@ vnavmesh.
 
 ### Android remote
 
-Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.18.2.0/BPH-Remote.apk)**
+Control the PC from your phone: **[Download BPH Remote](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.18.2.1/BPH-Remote.apk)**
 (Android 8.0+; the newest Bard Performance Helper release always carries the newest app).
 
 - **Everything you need from the couch.** A pinned now-playing bar with transport and a one-tap
@@ -116,7 +116,7 @@ Control the PC from your phone: **[Download BPH Remote](https://github.com/t3kni
 
 ### Windows console
 
-Control the host from another Windows computer: **[Download BPH Console](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.18.2.0/BPH-Console.exe)**
+Control the host from another Windows computer: **[Download BPH Console](https://github.com/t3knical/DalamudPlugins/releases/download/BardPerformanceHelper-v0.18.2.1/BPH-Console.exe)**
 (one file, nothing to install; Windows may warn because it is not signed). It connects the same
 way the phone does, then shows the whole band at once: every player's instrument and whether
 they have the song and are ready, the playlist, transport and ensemble start, who plays which
