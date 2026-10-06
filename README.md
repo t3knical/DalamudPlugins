@@ -85,6 +85,9 @@ vnavmesh.
 
 - **Compact overlay.** Collapsible groups, a filterable playlist, one-click ensemble and
   formation buttons, emotes for the whole band or just you, and your choice of fonts and sizes.
+- **Window placement.** Move and resize the game window to a saved spot as soon as the plugin
+  loads (Windows, or Linux through Wine / Proton), per character, and - if a member allows it -
+  let the leader place each player's window, remembered per player by name.
 - **Member extras.** Per-member camera and render tweaks (remembered for each character),
   auto-accept for party invites and teleports from characters you list, a window title that shows
   who each client is, and restart or close for member clients.
