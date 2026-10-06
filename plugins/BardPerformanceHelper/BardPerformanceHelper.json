@@ -2,7 +2,7 @@
     "Author":  "T3chnicalD3ath Inc.",
     "Name":  "Bard Performance Helper",
     "InternalName":  "BardPerformanceHelper",
-    "AssemblyVersion":  "0.18.1.0",
+    "AssemblyVersion":  "0.18.1.1",
     "Description":  "Play MIDI files on any instrument with a playlist, per-track controls and auto instrument switching. Host your party as a band: the leader plays songs for everyone, swaps instruments, assigns tracks, and starts the ensemble in sync. The leader can also send songs straight to members, so they don\u0027t need any MIDI files of their own. The song is held in memory only, never saved to their disk. Includes formations with a follow mode, a compact overlay, emotes, and optional member extras (camera and render tweaks, auto-accept for listed friends, restart or close clients). Everything is encrypted and direct, with no outside server, and members opt in to anything that controls their character or game.\n\nUse /bph to open it. Formations need vnavmesh.",
     "ApplicableVersion":  "any",
     "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
