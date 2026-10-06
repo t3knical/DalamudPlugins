@@ -120,7 +120,10 @@ Control the host from another Windows computer: **[Download BPH Console](https:/
 (one file, nothing to install; Windows may warn because it is not signed). It connects the same
 way the phone does, then shows the whole band at once: every player's instrument and whether
 they have the song and are ready, the playlist, transport and ensemble start, who plays which
-track (click to hand tracks out, or auto-assign), formations, emotes and an activity log.
+track (click to hand tracks out, or auto-assign), formations, emotes and an activity log. It can
+also play the whole band on that computer with the game's instruments (two game SoundFonts are
+built in, or load your own) while a keyboard shows every track's notes landing, and any section
+can be folded away.
 Needs plugin 0.17.4.0 or newer for the track panel.
 
 ### Security and who to trust
