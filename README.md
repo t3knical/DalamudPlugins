@@ -28,6 +28,12 @@ Then, in game:
 
 ---
 
+## Guides
+
+- **[Beastmaster + Crucible user guide](docs/RH-BMR-BMH-Users-Guide.md)** - how Beast Master Helper, BossMod Reborn Tekz and Reaction Helper fit together, how to set them up, what is included and what still needs work.
+
+---
+
 ## At a glance
 
 | | Plugin | What it does | Command |
