@@ -54,8 +54,6 @@ Switch **AI Assist** on and BMH presses the next best action on the target *you*
 | Rally / Rallying Cheer | Spend Mastered / Natural Instinct (cooldowns must be on). |
 | Power actions | Trick and the TP-spending axes. |
 | Burn | Spend everything as it comes up instead of holding for the instinct wheel. There is also a slider: **Burn when the enemy is under X% HP**. |
-| Sprint | Press Sprint when the target is far away (off by default). |
-| Potion | Drink a **Gemdraught of Strength** (best grade in your bag, Grade 1-4) in combat when ready (off by default). |
 | Auto-attack | On = normal. **Off = BMH switches the game's auto-attack off whenever it is running** (it checks every frame). |
 | Gap close | Shield Charge to close on a target out of reach. |
 | Charge AoE | Also use Shield Charge for AoE on a pack (off by default). |
@@ -84,7 +82,7 @@ profile knows *when* (the buster, the interrupt, the debuff).
 ### 3.3 The overlay windows
 
 - **Main overlay** - status, familiar, gauge, next action. Click its header to start/stop, right-click for settings.
-- **Rotation** and **Familiar** windows - grids of the switches above. **Actions** window - icons that ask the rotation to use an ability next.
+- **Rotation** and **Familiar** windows - grids of the switches above. **Actions** window - icons that ask the rotation to use an ability next, including **Sprint** and the **Gemdraught of Strength** potion (best grade in your bag, Grade 1-4): click once and it is used as soon as it can be.
 - Everything is yours to arrange: in *Rotation Stuff > Settings > Quick Toggles / Hotbar* you can
   **drag a toggle (or action) up and down in the Keybinds list and the overlay follows**, move a toggle to the other window, hide its button
   (**Show Button**), turn it on/off (**Enabled**), give it a **key combination**, and change spacing, button height, text size and colours.
