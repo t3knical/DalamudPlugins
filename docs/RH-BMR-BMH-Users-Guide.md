@@ -60,8 +60,7 @@ Switch **AI Assist** on and BMH presses the next best action on the target *you*
 | Trick waits TP | Hold Trick until your own TP is full. |
 | Beast Mode / Wave in melee / Cloud Skim | The borrowed kinship action - see 3.2. |
 | Auto-summon / Cycle / Kin order | Summon a familiar when none is out; swap them with Parting Blow; choose by kinship. |
-| Keep Covered | Snarl upkeep so the familiar tanks for you (Challenge when off). |
-| Cover me below HP % | Emergency cover (default 20%, 0 = off): when your HP is under it and a familiar is out, Snarl is pressed so the familiar takes the damage - whatever Keep Covered says and whatever Reaction Helper is doing. Set in *Options > Familiar Selection*. |
+| Keep Covered | Snarl upkeep so the familiar tanks for you (Challenge when off). BMH only follows this switch; **Reaction Helper's BST General profile decides when it is on** - including turning cover on when your own HP drops under 20% (edit the number in that reaction). |
 | Parting Blow / Need Vantage / Spend power | When the familiar may be sent away. |
 | **Borrow / Tempered Release** | What the summon's *One with Nature* charge is spent on. See 3.2. |
 
