@@ -1,5 +1,37 @@
 [
     {
+        "Author":  "T3chnicalD3ath Inc.",
+        "Name":  "Reaction Helper",
+        "InternalName":  "ReactionHelper",
+        "AssemblyVersion":  "0.10.35.5",
+        "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
+        "ApplicableVersion":  "any",
+        "Tags":  [
+                     "reactions",
+                     "timeline",
+                     "rotation"
+                 ],
+        "CategoryTags":  [
+                             "Jobs"
+                         ],
+        "DalamudApiLevel":  15,
+        "LoadRequiredState":  0,
+        "LoadSync":  false,
+        "CanUnloadAsync":  false,
+        "LoadPriority":  0,
+        "Punchline":  "Timeline and job reactions that drive your rotation plugins.",
+        "AcceptsFeedback":  true,
+        "IsHide":  false,
+        "IsTestingExclusive":  false,
+        "DownloadCount":  14,
+        "LastUpdate":  1791544441,
+        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.5/ReactionHelper.zip",
+        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.5/ReactionHelper.zip",
+        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.5/ReactionHelper.zip",
+        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
+        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
+    },
+    {
         "Author":  "The Combat Reborn Team (fork maintained by t3knical)",
         "Name":  "BossmodReborn (Tekz Fork)",
         "InternalName":  "BossModRebornTekz",
@@ -64,38 +96,6 @@
         "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/BeastMasterHelper-v0.10.4.1/BeastMasterHelper.zip",
         "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
         "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/BeastMasterHelper/icon.png"
-    },
-    {
-        "Author":  "T3chnicalD3ath Inc.",
-        "Name":  "Reaction Helper",
-        "InternalName":  "ReactionHelper",
-        "AssemblyVersion":  "0.10.35.4",
-        "Description":  "Load a fight timeline (cactbot format) or a per-job profile, and attach reactions to mechanics: conditions on you, your target and your party, and actions that press a skill, flip a MachinistHelper or BeastMasterHelper toggle, hold an action, or show an alert.",
-        "ApplicableVersion":  "any",
-        "Tags":  [
-                     "reactions",
-                     "timeline",
-                     "rotation"
-                 ],
-        "CategoryTags":  [
-                             "Jobs"
-                         ],
-        "DalamudApiLevel":  15,
-        "LoadRequiredState":  0,
-        "LoadSync":  false,
-        "CanUnloadAsync":  false,
-        "LoadPriority":  0,
-        "Punchline":  "Timeline and job reactions that drive your rotation plugins.",
-        "AcceptsFeedback":  true,
-        "IsHide":  false,
-        "IsTestingExclusive":  false,
-        "DownloadCount":  14,
-        "LastUpdate":  1791540724,
-        "DownloadLinkInstall":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.4/ReactionHelper.zip",
-        "DownloadLinkUpdate":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.4/ReactionHelper.zip",
-        "DownloadLinkTesting":  "https://github.com/t3knical/DalamudPlugins/releases/download/ReactionHelper-v0.10.35.4/ReactionHelper.zip",
-        "RepoUrl":  "https://github.com/t3knical/DalamudPlugins",
-        "IconUrl":  "https://raw.githubusercontent.com/t3knical/DalamudPlugins/main/plugins/ReactionHelper/icon.png"
     },
     {
         "Author":  "T3chnicalD3ath Inc.",
